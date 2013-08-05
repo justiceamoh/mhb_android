@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	DBHelper myDBHelper;
+	MySQLiteHelper myDBHelper;
 	
 	
     @Override
