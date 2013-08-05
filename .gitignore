@@ -1,0 +1,4 @@
+#ignore project setting files
+.classpath
+.project
+.settings/
