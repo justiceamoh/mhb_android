@@ -1,6 +1,10 @@
 package edu.dartmouth.mhb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -26,9 +30,37 @@ public class HymnsDataSource {
 		  dbHelper.close();
 	  }
 	  
-	  
-	  
-	  
+
+
+	  public List<Hymn> getAllHymns() {
+	  	List<Hymn> hymns = new ArrayList<Hymn>();
+
+	  	Cursor cursor = database.query(MySQLiteHelper.TABLE_HYMNS,
+        allColumns, null, null, null, null, null);
+
+	  	cursor.moveToFirst();
+	    while (!cursor.isAfterLast()) {
+	      Hymn hymn = cursorToHymn(cursor);
+	      hymns.add(hymn);
+	      cursor.moveToNext();
+	    }
+
+	    // Closing the cursor
+	    cursor.close();
+	    return hymns;
+	  }
+
+
+	  private Hymn cursorToHymn(Cursor cursor) {
+	    Hymn hymn = new Hymn();
+	    hymn.setId(cursor.getLong(0));
+	    hymn.setTitle(cursor.getString(1));
+	    hymn.setAuthor(cursor.getString(2));
+	    hymn.setUrl(cursor.getString(3));
+	    hymn.setLyrics(cursor.getString(4));	    	    
+	    return hymn;
+	  }
+
 	  
 	  
 }
