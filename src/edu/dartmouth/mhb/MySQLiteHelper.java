@@ -16,16 +16,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	private static String DB_PATH = "/data/data/edu.dartmouth.mhb/databases/";
 	private static String DB_NAME = "mhb.db";
 
-	  public static final String TABLE_HYMNS = "hymns";
-	  public static final String COLUMN_ID = "_id";
-	  public static final String COLUMN_TITLE = "title";
-	  public static final String COLUMN_AUTHOR = "author";
-	  public static final String COLUMN_URL = "url";
-	  public static final String COLUMN_LYRICS = "lyrics";
-	
+	public static final String TABLE_HYMNS = "hymns";
+	public static final String COLUMN_ID = "_id";
+	public static final String COLUMN_TITLE = "title";
+	public static final String COLUMN_AUTHOR = "author";
+	public static final String COLUMN_URL = "url";
+	public static final String COLUMN_LYRICS = "lyrics";
 	
 	private final Context myContext;
 	private SQLiteDatabase myDataBase;
+	
 	
 	public MySQLiteHelper(Context context) {
 		super(context, DB_NAME, null, 1);
@@ -33,13 +33,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	}
 	
 	
-	
+//Creates empty database on system and rewrites it with external database	
 	public void createDataBase() throws IOException{
 		boolean dbExist = checkDataBase();
 		
 		if (dbExist){
-			
+			//do nothing, db already exists
 		}else{
+
+			this.getReadableDatabase();
+
 			try {
 					copyDataBase();
 			} catch(IOException e){
@@ -95,13 +98,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	}
 	
 	
-	private void openDataBase() throws SQLException{
+	public void openDataBase() throws SQLException{
 		//Open the database
 		String myPath = DB_PATH + DB_NAME;
 		//TODO check whether myDataBase is supposed to be a field
 		myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 	}
 
+	public SQLiteDatabase getDatabase() {
+		return myDataBase;
+	}
 
 	@Override
 	public synchronized void close() {

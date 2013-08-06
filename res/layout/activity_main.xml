@@ -1,70 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:text="@string/ui_number_title" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ui_number_title" />
+    <EditText
+        android:id="@+id/editNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:inputType="numberSigned"
+        android:singleLine="true" >
+    </EditText>
 
-        <EditText
-            android:id="@+id/editNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:inputType="numberSigned"
-            android:singleLine="true" >
-        </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ui_title_title" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ui_title_title" />
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:inputType="text"
+        android:singleLine="true" >
+    </EditText>
 
-        <EditText
-            android:id="@+id/editTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:inputType="text"
-            android:singleLine="true" >
-        </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ui_author_title" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ui_author_title" />
+    <EditText
+        android:id="@+id/editAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:inputType="text"
+        android:singleLine="true" >
+    </EditText>
 
-        <EditText
-            android:id="@+id/editAuthor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:inputType="text"
-            android:singleLine="true" >
-        </EditText>
+    <Button
+        android:id="@+id/btnLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:onClick="onLoadClicked"
+        android:text="Load" />
 
-        <Button
-            android:id="@+id/btnLoad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:onClick="onLoadClicked"
-            android:text="Load" />
-
-        <TextView
-            android:id="@+id/textHymn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hymn_text" />
-    </LinearLayout>
-
+    <ScrollView
+        android:layout_width ="fill_parent" 
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textLyrics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hymn_text" />
 </ScrollView>
+</LinearLayout>

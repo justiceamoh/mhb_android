@@ -1,5 +1,6 @@
 package edu.dartmouth.mhb;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,24 @@ public class HymnsDataSource {
 	 
 	  
 	  public void open() throws SQLException {
-		    database = dbHelper.getWritableDatabase();
+		    
+		    try {
+		    	dbHelper.createDataBase();
+		    } catch (IOException ioe) {
+		    	throw new Error("Unable to create database");
+		    }
+	  
+		   try{
+			   dbHelper.close();
+			   dbHelper.openDataBase();
+			   //TODO check also: return myDatabase from dbHelper
+			   database = dbHelper.getDatabase();
+			   			   
+		   }catch(SQLException sqle){
+			   throw sqle;
+		   }
+		      
+	  
 	  }	  
 
 	  public void close() {
@@ -55,9 +73,9 @@ public class HymnsDataSource {
 	    Hymn hymn = new Hymn();
 	    hymn.setId(cursor.getLong(0));
 	    hymn.setTitle(cursor.getString(1));
-	    hymn.setAuthor(cursor.getString(2));
+	   // hymn.setAuthor(cursor.getString(2));
 	    hymn.setUrl(cursor.getString(3));
-	    hymn.setLyrics(cursor.getString(4));	    	    
+	    //hymn.setLyrics(cursor.getString(4));	    	    
 	    return hymn;
 	  }
 
