@@ -73,9 +73,9 @@ public class HymnsDataSource {
 	    Hymn hymn = new Hymn();
 	    hymn.setId(cursor.getLong(0));
 	    hymn.setTitle(cursor.getString(1));
-	   // hymn.setAuthor(cursor.getString(2));
+	    hymn.setAuthor(cursor.getString(2));
 	    hymn.setUrl(cursor.getString(3));
-	    //hymn.setLyrics(cursor.getString(4));	    	    
+	    hymn.setLyrics(cursor.getString(4));	    	    
 	    return hymn;
 	  }
 
