@@ -3,7 +3,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="title_size">18sp</dimen>
+    <dimen name="title_size">17sp</dimen>
 	<dimen name="author_size">14sp</dimen>
 	<dimen name="number_size">15sp</dimen>
 	<dimen name="lyrics_size">16sp</dimen>

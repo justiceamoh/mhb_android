@@ -3,10 +3,16 @@ package edu.dartmouth.mhb;
 
 import java.util.List;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.SearchManager;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,19 +48,48 @@ public class MainActivity extends Activity {
     }
     
     
-    @Override
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        
+       //TODO check API level for getAction
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        
+        
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                return true;
+            case R.id.action_author:
+                return true;
+                
+             case R.id.action_title:
+                return true;
+                
+                
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }    
+    
+    
+    
+    
     public void onLoadClicked(View v){
     	String str_val;
     	
     	//Set MHB no. from db
      	str_val = String.valueOf(hymns.get(index).getId());
-    	((TextView) findViewById(R.id.textNumber)).setText(str_val);
+    	((TextView) findViewById(R.id.textNumber)).setText("MHB "+str_val);
     	
     	//Set Title from db
      	str_val = hymns.get(index).getTitle();
@@ -70,7 +105,7 @@ public class MainActivity extends Activity {
     	((TextView) findViewById(R.id.textLyrics)).setText(str_val);
     	
     	// Making a "toast" informing the user the profile is saved.
-		Toast.makeText(getApplicationContext(),"Loaded",Toast.LENGTH_SHORT).show(); 
+		Toast.makeText(getApplicationContext(),"Next",Toast.LENGTH_SHORT).show(); 
 		
 		index = ++index%10;
 		

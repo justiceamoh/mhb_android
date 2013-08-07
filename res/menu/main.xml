@@ -1,9 +1,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/action_search"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_action_search"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="@string/action_number"/>
+    <item
+        android:id="@+id/action_title"
+        android:showAsAction="always"
+        android:title="@string/action_title"/>
+    <item
+        android:id="@+id/action_author"
+        android:showAsAction="always"
+        
+        android:title="@string/action_author"/>
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/action_settings"/>
 
 </menu>
