@@ -54,16 +54,16 @@ public class MainActivity extends Activity {
     	
     	//Set MHB no. from db
      	str_val = String.valueOf(hymns.get(index).getId());
-    	((TextView) findViewById(R.id.editNumber)).setText(str_val);
+    	((TextView) findViewById(R.id.textNumber)).setText(str_val);
     	
     	//Set Title from db
      	str_val = hymns.get(index).getTitle();
-    	((TextView) findViewById(R.id.editTitle)).setText(str_val);
+    	((TextView) findViewById(R.id.textTitle)).setText(str_val);
     
   
     	//Set Author from db
     	str_val = hymns.get(index).getAuthor();
-    	((TextView) findViewById(R.id.editAuthor)).setText(str_val);
+    	((TextView) findViewById(R.id.textAuthor)).setText(str_val);
     	
     	//Set Lyrics from db
     	str_val = hymns.get(index).getLyrics();

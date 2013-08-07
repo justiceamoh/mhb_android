@@ -4,65 +4,52 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ui_number_title" />
-
-    <EditText
-        android:id="@+id/editNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:inputType="numberSigned"
-        android:singleLine="true" >
-    </EditText>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ui_title_title" />
-
-    <EditText
-        android:id="@+id/editTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:inputType="text"
-        android:singleLine="true" >
-    </EditText>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ui_author_title" />
-
-    <EditText
-        android:id="@+id/editAuthor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:inputType="text"
-        android:singleLine="true" >
-    </EditText>
-
     <Button
         android:id="@+id/btnLoad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
         android:onClick="onLoadClicked"
-        android:text="Load" />
+        android:text="Next" />
 
-    <ScrollView
-        android:layout_width ="fill_parent" 
-        android:layout_height="wrap_content">
     <TextView
-        android:id="@+id/textLyrics"
+        android:id="@+id/textNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hymn_text" />
-</ScrollView>
+        android:layout_margin="10dp"
+        android:text="@string/ui_number_title" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/ui_title_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/ui_author_title"
+        android:textStyle="italic" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textLyrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/hymn_text" />
+    </ScrollView>
+
 </LinearLayout>
