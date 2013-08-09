@@ -5,8 +5,6 @@ import java.util.List;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.SearchManager;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,8 +31,11 @@ public class MainActivity extends Activity {
         
         index = 0;
         hymns = datasource.getAllHymns();
+        
+        
     }
 
+    
     @Override
     protected void onResume(){
     	datasource.open();
@@ -55,10 +56,10 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         
        //TODO check API level for getAction
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+       
         
+        // Configure the search info and add any event listeners
         
         return true;
     }

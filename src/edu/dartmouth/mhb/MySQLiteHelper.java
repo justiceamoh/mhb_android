@@ -16,12 +16,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	private static String DB_PATH = "/data/data/edu.dartmouth.mhb/databases/";
 	private static String DB_NAME = "mhb.db";
 
-	public static final String TABLE_HYMNS = "hymns";
-	public static final String COLUMN_ID = "_id";
-	public static final String COLUMN_TITLE = "title";
-	public static final String COLUMN_AUTHOR = "author";
-	public static final String COLUMN_URL = "url";
-	public static final String COLUMN_LYRICS = "lyrics";
+
 	
 	private final Context myContext;
 	private SQLiteDatabase myDataBase;

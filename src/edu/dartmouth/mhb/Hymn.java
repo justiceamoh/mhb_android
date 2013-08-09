@@ -1,11 +1,11 @@
 package edu.dartmouth.mhb;
 
 public class Hymn {
-	private long id;
-	private String title;
-	private String author;
-	private String url;
-	private String lyrics;
+	private long id = Long.MIN_VALUE;
+	private String title = null;
+	private String author = null;
+	private String url = null;
+	private String lyrics = null;
 	
   	public long getId() {
 	    return this.id;

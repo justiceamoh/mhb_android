@@ -8,15 +8,26 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class HymnsDataSource {
+	// Database Strings
+	public static final String TABLE_HYMNS = "hymns";
+	public static final String COLUMN_ID = "_id";
+	public static final String COLUMN_TITLE = "title";
+	public static final String COLUMN_AUTHOR = "author";
+	public static final String COLUMN_URL = "url";
+	public static final String COLUMN_LYRICS = "lyrics";
+    public static final String KEY_SEARCH = "searchData";
+	
 	 // Database fields
 	  private SQLiteDatabase database;
 	  private MySQLiteHelper dbHelper;
-	  private String[] allColumns = { MySQLiteHelper.COLUMN_ID, 
-	      MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_AUTHOR,
-	      MySQLiteHelper.COLUMN_URL, MySQLiteHelper.COLUMN_LYRICS };
-	   
+	  private String[] allColumns = { COLUMN_ID, 
+	      COLUMN_TITLE, COLUMN_AUTHOR,
+	      COLUMN_URL, COLUMN_LYRICS };
+	  
+	  
 	 
 	  public HymnsDataSource(Context context) {
 		    dbHelper = new MySQLiteHelper(context);
@@ -48,12 +59,28 @@ public class HymnsDataSource {
 		  dbHelper.close();
 	  }
 	  
-
+	  //TODO check search database method
+	   public Cursor searchDatabase(String inputText) throws SQLException {        
+	        String query = "SELECT docid as _id," + 
+	        COLUMN_ID + "," +
+	        COLUMN_TITLE + "," +
+	        COLUMN_AUTHOR +
+	        " from " + TABLE_HYMNS +
+	        " where " +  KEY_SEARCH + " MATCH '" + inputText + "';";
+	        
+	        Cursor mCursor = database.rawQuery(query,null);
+	 
+	        if (mCursor != null) {
+	            mCursor.moveToFirst();
+	        }
+	        return mCursor;
+	 
+	    }	  
 
 	  public List<Hymn> getAllHymns() {
 	  	List<Hymn> hymns = new ArrayList<Hymn>();
 
-	  	Cursor cursor = database.query(MySQLiteHelper.TABLE_HYMNS,
+	  	Cursor cursor = database.query(TABLE_HYMNS,
         allColumns, null, null, null, null, null);
 
 	  	cursor.moveToFirst();
@@ -69,6 +96,8 @@ public class HymnsDataSource {
 	  }
 
 
+	  
+	  
 	  private Hymn cursorToHymn(Cursor cursor) {
 	    Hymn hymn = new Hymn();
 	    hymn.setId(cursor.getLong(0));

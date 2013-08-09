@@ -6,12 +6,16 @@
     <string name="action_number">Numbers</string>
     <string name="action_author">Authors</string>
     <string name="action_title">Title</string>
-   
-    <string name="search_hint">Search hymns</string>
+
+    <string name="hello">Hello World, SearchViewActivity!</string>
+    <string name="search_label">Hymns</string>
+    <string name="search_hint">Search Hymns</string>
+    <string name="settings_description">List of Hymns</string>
+
     <string name="ui_number_title">Mhb No.</string>
     <string name="ui_title_title">Title</string>
     <string name="ui_author_title">Author</string>
-    
+   
     <string name="hymn_text">Begone unbelief, my Savior is near,
 And for my relief will surely appear:
 By prayer let me wrestle, and He wilt perform,
