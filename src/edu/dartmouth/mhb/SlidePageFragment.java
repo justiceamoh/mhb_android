@@ -9,11 +9,10 @@ import android.widget.TextView;
 
 public class SlidePageFragment extends Fragment {
 	
-	
 	private Hymn hymn;
 	
 	//Construct a new page for a given hymn
-	public static SlidePageFragment create(Hymn hymn){
+	public static SlidePageFragment newInstance(Hymn hymn){
 		SlidePageFragment fragment = new SlidePageFragment();
 		Bundle args = new Bundle();
 		args.putLong(Globals.KEY_ID, hymn.getId());
@@ -25,8 +24,7 @@ public class SlidePageFragment extends Fragment {
 		
 	}
 	
-	public SlidePageFragment(){
-		
+	public SlidePageFragment(){		
 	}
 	
     @Override

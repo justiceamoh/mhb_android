@@ -1,48 +1,49 @@
 package edu.dartmouth.mhb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v13.app.FragmentStatePagerAdapter;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
 public class SlidePageActivity extends FragmentActivity {
-    /**
-     * The number of pages (wizard steps) to show in this demo.
-     */
-    private static final int NUM_PAGES = 5;
-
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
+	
+	//    private static final int NUM_PAGES = 5;
     private ViewPager mPager;
-
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
     private PagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_page);
-
+        
+        List<Fragment> fragments = getFragments();
+        
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPagerAdapter = new SlidePageAdapter(getFragmentManager());
+        mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
         mPager.setAdapter(mPagerAdapter);
         
         
         //TODO: reset action bar for each page fragment?
     }
-
+    
+    private List<Fragment> getFragments(){
+    	Hymn hymn = new Hymn();
+    	List<Fragment> fList = new ArrayList<Fragment>();
+    	fList.add(SlidePageFragment.newInstance(hymn));
+    	
+    	
+    	return fList;
+    }
     
 // TODO: menu options and next/previous actions    
-    
-    
+       
     
     @Override
     public void onBackPressed() {
@@ -60,19 +61,22 @@ public class SlidePageActivity extends FragmentActivity {
      * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
      * sequence.
      */
-    private class SlidePageAdapter extends FragmentStatePagerAdapter {
-        public SlidePageAdapter(FragmentManager fm) {
+    private class SlidePageAdapter extends FragmentPagerAdapter {
+        private List<Fragment> fragments;
+    	
+    	public SlidePageAdapter(FragmentManager fm, List<Fragment> fragments) {
             super(fm);
+            this.fragments = fragments;
         }
 
         @Override
         public Fragment getItem(int position) {
-            return new SlidePageFragment();
+            return this.fragments.get(position);
         }
         
         @Override
         public int getCount() {
-            return NUM_PAGES;
+            return this.fragments.size();
         }
     }
 }
