@@ -50,31 +50,33 @@ public class MainActivity extends Activity {
     }
 
     public void onLoadClicked(View v){
-    	String str_val;
-    	
-    	//Set MHB no. from db
-     	str_val = String.valueOf(hymns.get(index).getId());
-    	((TextView) findViewById(R.id.textNumber)).setText(str_val);
-    	
-    	//Set Title from db
-     	str_val = hymns.get(index).getTitle();
-    	((TextView) findViewById(R.id.textTitle)).setText(str_val);
-    
-  
-    	//Set Author from db
-    	str_val = hymns.get(index).getAuthor();
-    	((TextView) findViewById(R.id.textAuthor)).setText(str_val);
-    	
-    	//Set Lyrics from db
-    	str_val = hymns.get(index).getLyrics();
-    	((TextView) findViewById(R.id.textLyrics)).setText(str_val);
-    	
-    	// Making a "toast" informing the user the profile is saved.
-		Toast.makeText(getApplicationContext(),"Loaded",Toast.LENGTH_SHORT).show(); 
-		
+
+    	Hymn hymn = hymns.get(index);
+    	loadHymn(hymn);
 		index = ++index%10;
 		
     }
     
+    
+    public void loadHymn(Hymn hymn){
+    	String str_val;
+    	
+    	//Set MHB no. from db
+     	str_val = "MHB " + String.valueOf(hymn.getId());
+    	((TextView) findViewById(R.id.textNumber)).setText(str_val);
+    	
+    	//Set Title from db
+     	str_val = hymn.getTitle();
+    	((TextView) findViewById(R.id.textTitle)).setText(str_val);
+    
+  
+    	//Set Author from db
+    	str_val = hymn.getAuthor();
+    	((TextView) findViewById(R.id.textAuthor)).setText(str_val);
+    	
+    	//Set Lyrics from db
+    	str_val = hymn.getLyrics();
+    	((TextView) findViewById(R.id.textLyrics)).setText(str_val);
+    }
     
 }
