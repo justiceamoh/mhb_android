@@ -23,12 +23,9 @@ public class SlidePageFragment extends Fragment {
 		return fragment;
 		
 	}
+
 	
-	public SlidePageFragment(){		
-	}
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hymn = new Hymn();
         hymn.setId(getArguments().getLong(Globals.KEY_ID));
@@ -50,7 +47,7 @@ public class SlidePageFragment extends Fragment {
         
     	//Set MHB no. from db
      	str_val = "MHB " + String.valueOf(hymn.getId());        
-        ((TextView) rootView.findViewById(android.R.id.text1)).setText(str_val);
+        ((TextView) rootView.findViewById(R.id.textNumber)).setText(str_val);
 
     	//Set Title from db
      	str_val = hymn.getTitle();

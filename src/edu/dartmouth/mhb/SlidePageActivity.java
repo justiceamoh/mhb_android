@@ -13,6 +13,11 @@ import android.support.v4.view.ViewPager;
 
 public class SlidePageActivity extends FragmentActivity {
 	
+	MySQLiteHelper myDBHelper;
+	private HymnsDataSource datasource;
+	private List<Hymn> hymns;
+	
+	
 	//    private static final int NUM_PAGES = 5;
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
@@ -22,8 +27,12 @@ public class SlidePageActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_page);
         
-        List<Fragment> fragments = getFragments();
+        datasource = new HymnsDataSource(this);
+        datasource.open();        
+        hymns = datasource.getAllHymns();
         
+        
+        List<Fragment> fragments = getFragments();        
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
@@ -32,12 +41,26 @@ public class SlidePageActivity extends FragmentActivity {
         
         //TODO: reset action bar for each page fragment?
     }
+    @Override
+    protected void onResume(){
+    	datasource.open();
+    	super.onResume();
+    }
+    
+    @Override
+    protected void onPause() {
+    	datasource.close();
+    	super.onPause();
+    }
+       
     
     private List<Fragment> getFragments(){
-    	Hymn hymn = new Hymn();
     	List<Fragment> fList = new ArrayList<Fragment>();
-    	fList.add(SlidePageFragment.newInstance(hymn));
-    	
+    	  for(int i=0; i<5; i++){
+    		   	fList.add(SlidePageFragment.newInstance(hymns.get(i)));
+
+          }
+     	
     	
     	return fList;
     }
