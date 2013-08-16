@@ -32,10 +32,18 @@ public class SlidePageActivity extends FragmentActivity {
 
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
+        mPagerAdapter = new SlidePageAdapter(getFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+        
+        
+        //TODO: reset action bar for each page fragment?
     }
 
+    
+// TODO: menu options and next/previous actions    
+    
+    
+    
     @Override
     public void onBackPressed() {
         if (mPager.getCurrentItem() == 0) {
@@ -52,8 +60,8 @@ public class SlidePageActivity extends FragmentActivity {
      * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
      * sequence.
      */
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
+    private class SlidePageAdapter extends FragmentStatePagerAdapter {
+        public SlidePageAdapter(FragmentManager fm) {
             super(fm);
         }
 

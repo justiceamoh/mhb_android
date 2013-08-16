@@ -6,6 +6,17 @@ public class Hymn {
 	private String author;
 	private String url;
 	private String lyrics;
+
+	
+	//Constructor for Hymn class
+	public Hymn(){
+		
+		id = Long.MIN_VALUE;
+		title = null;
+		author=null;
+		url = null;
+		lyrics=null;		
+	}
 	
   	public long getId() {
 	    return this.id;
