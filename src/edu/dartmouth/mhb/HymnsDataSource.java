@@ -60,22 +60,17 @@ public class HymnsDataSource {
 	  }
 	  
 	  //TODO check search database method
-	   public Cursor searchDatabase(String inputText) throws SQLException {        
-	        String query = "SELECT docid as _id," + 
-	        COLUMN_ID + "," +
-	        COLUMN_TITLE + "," +
-	        COLUMN_AUTHOR +
-	        " from " + TABLE_HYMNS +
-	        " where " +  KEY_SEARCH + " MATCH '" + inputText + "';";
-	        
+	   public Cursor searchHymn(String inputText) throws SQLException {        
+	        String query = "SELECT * FROM " + TABLE_HYMNS + 
+	        " WHERE " + TABLE_HYMNS + " MATCH '" + inputText + "';";	        	        
 	        Cursor mCursor = database.rawQuery(query,null);
 	 
 	        if (mCursor != null) {
 	            mCursor.moveToFirst();
 	        }
-	        return mCursor;
-	 
+	        return mCursor;	 
 	    }	  
+	   
 
 	  public List<Hymn> getAllHymns() {
 	  	List<Hymn> hymns = new ArrayList<Hymn>();
