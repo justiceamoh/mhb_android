@@ -17,7 +17,7 @@ public class SlidePageFragment extends Fragment {
 		Bundle args = new Bundle();
 		args.putLong(Globals.KEY_ID, hymn.getId());
 		args.putString(Globals.KEY_AUTHOR, hymn.getAuthor());
-		args.putString(Globals.KEY_TITLE, hymn.getAuthor());
+		args.putString(Globals.KEY_TITLE, hymn.getTitle());
 		args.putString(Globals.KEY_LYRICS, hymn.getLyrics());
 		fragment.setArguments(args);
 		return fragment;

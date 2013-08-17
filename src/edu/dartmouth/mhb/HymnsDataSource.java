@@ -10,75 +10,81 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 public class HymnsDataSource {
-	 // Database fields
-	  private SQLiteDatabase database;
-	  private MySQLiteHelper dbHelper;
-	  private String[] allColumns = { MySQLiteHelper.COLUMN_ID, 
-	      MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_AUTHOR,
-	      MySQLiteHelper.COLUMN_URL, MySQLiteHelper.COLUMN_LYRICS };
-	   
-	 
-	  public HymnsDataSource(Context context) {
-		    dbHelper = new MySQLiteHelper(context);
-	  }
-	 
-	  
-	  public void open() throws SQLException {
-		    
-		    try {
-		    	dbHelper.createDataBase();
-		    } catch (IOException ioe) {
-		    	throw new Error("Unable to create database");
-		    }
-	  
-		   try{
-			   dbHelper.close();
-			   dbHelper.openDataBase();
-			   //TODO check also: return myDatabase from dbHelper
-			   database = dbHelper.getDatabase();
-			   			   
-		   }catch(SQLException sqle){
-			   throw sqle;
-		   }
-		      
-	  
-	  }	  
+	// Database fields
+	private SQLiteDatabase database;
+	private MySQLiteHelper dbHelper;
+	private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
+			MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_AUTHOR,
+			MySQLiteHelper.COLUMN_URL, MySQLiteHelper.COLUMN_LYRICS };
 
-	  public void close() {
-		  dbHelper.close();
-	  }
-	  
+	public HymnsDataSource(Context context) {
+		dbHelper = new MySQLiteHelper(context);
+	}
 
+	public void open() throws SQLException {
 
-	  public List<Hymn> getAllHymns() {
-	  	List<Hymn> hymns = new ArrayList<Hymn>();
+		try {
+			dbHelper.createDataBase();
+		} catch (IOException ioe) {
+			throw new Error("Unable to create database");
+		}
 
-	  	Cursor cursor = database.query(MySQLiteHelper.TABLE_HYMNS,
-        allColumns, null, null, null, null, null);
+		try {
+			dbHelper.close();
+			dbHelper.openDataBase();
+			// TODO check also: return myDatabase from dbHelper
+			database = dbHelper.getDatabase();
 
-	  	cursor.moveToFirst();
-	    while (!cursor.isAfterLast()) {
-	      Hymn hymn = cursorToHymn(cursor);
-	      hymns.add(hymn);
-	      cursor.moveToNext();
-	    }
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
 
-	    // Closing the cursor
-	    cursor.close();
-	    return hymns;
-	  }
+	}
 
+	public void close() {
+		dbHelper.close();
+	}
 
-	  private Hymn cursorToHymn(Cursor cursor) {
-	    Hymn hymn = new Hymn();
-	    hymn.setId(cursor.getLong(0));
-	    hymn.setTitle(cursor.getString(1));
-	    hymn.setAuthor(cursor.getString(2));
-	    hymn.setUrl(cursor.getString(3));
-	    hymn.setLyrics(cursor.getString(4));	    	    
-	    return hymn;
-	  }
+	// TODO check search database method
+	public Cursor searchHymn(String inputText) throws SQLException {
 
-	  
-	  
+		String query = "SELECT * FROM " + Globals.KEY_TABLE + " WHERE "
+				+ Globals.KEY_TABLE + " MATCH '" + inputText + "';";
+		Cursor mCursor = database.rawQuery(query, null);
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+
+		return mCursor;
+	}
+
+	public List<Hymn> getAllHymns() {
+		List<Hymn> hymns = new ArrayList<Hymn>();
+
+		Cursor cursor = database.query(MySQLiteHelper.TABLE_HYMNS, allColumns,
+				null, null, null, null, null);
+
+		cursor.moveToFirst();
+		while (!cursor.isAfterLast()) {
+			Hymn hymn = cursorToHymn(cursor);
+			hymns.add(hymn);
+			cursor.moveToNext();
+		}
+
+		// Closing the cursor
+		cursor.close();
+		return hymns;
+	}
+
+	public Hymn cursorToHymn(Cursor cursor) {
+		Hymn hymn = new Hymn();
+		hymn.setId(cursor.getLong(0));
+		hymn.setTitle(cursor.getString(1));
+		hymn.setAuthor(cursor.getString(2));
+		hymn.setUrl(cursor.getString(3));
+		hymn.setLyrics(cursor.getString(4));
+		return hymn;
+	}
+
 }

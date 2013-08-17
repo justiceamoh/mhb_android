@@ -10,6 +10,7 @@ public abstract class Globals {
 	
 	
 	// Table schema, column names
+	public static final String KEY_TABLE ="hymns";
 	public static final String KEY_ID = "_id";
 	public static final String KEY_TITLE = "title";
 	public static final String KEY_AUTHOR = "author";
