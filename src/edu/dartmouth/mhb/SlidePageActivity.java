@@ -41,7 +41,6 @@ public class SlidePageActivity extends FragmentActivity {
         mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
         mPager.setAdapter(mPagerAdapter);
 
-
                
         //Reset action bar for each page
 //        mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
@@ -88,13 +87,11 @@ public class SlidePageActivity extends FragmentActivity {
 	    SearchManager searchManager = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
 	    SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
 	    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-	    
+
 	    // Do not iconify the widget;expand it by default
 	    searchView.setIconifiedByDefault(false);
 
-
-        
-        
+    
         return super.onCreateOptionsMenu(menu);
     }  
 
