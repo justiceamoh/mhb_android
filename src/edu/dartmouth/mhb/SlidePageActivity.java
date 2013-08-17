@@ -17,8 +17,6 @@ public class SlidePageActivity extends FragmentActivity {
 	private HymnsDataSource datasource;
 	private List<Hymn> hymns;
 	
-	
-	//    private static final int NUM_PAGES = 5;
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
 
@@ -37,9 +35,16 @@ public class SlidePageActivity extends FragmentActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
         mPager.setAdapter(mPagerAdapter);
+
+        //Reset action bar for each page
+//        mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+//            @Override
+//            public void onPageSelected(int position) {
+//                invalidateOptionsMenu();
+//            }
+//        });        
         
-        
-        //TODO: reset action bar for each page fragment?
+
     }
     @Override
     protected void onResume(){
@@ -66,8 +71,10 @@ public class SlidePageActivity extends FragmentActivity {
     }
     
 // TODO: menu options and next/previous actions    
-       
     
+    
+    
+           
     @Override
     public void onBackPressed() {
         if (mPager.getCurrentItem() == 0) {
@@ -80,10 +87,10 @@ public class SlidePageActivity extends FragmentActivity {
         }
     }
 
-    /**
-     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
-     * sequence.
-     */
+
+    
+    
+    
     private class SlidePageAdapter extends FragmentPagerAdapter {
         private List<Fragment> fragments;
     	
