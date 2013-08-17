@@ -35,13 +35,14 @@ public class SlidePageActivity extends FragmentActivity {
         hymns = datasource.getAllHymns();
         
         
-        List<Fragment> fragments = getFragments();        
-        
+        List<Fragment> fragments = getFragments();               
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
         mPager.setAdapter(mPagerAdapter);
 
+
+               
         //Reset action bar for each page
 //        mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 //            @Override
@@ -71,8 +72,7 @@ public class SlidePageActivity extends FragmentActivity {
     		   	fList.add(SlidePageFragment.newInstance(hymns.get(i)));
 
           }
-     	
-    	
+     	    	
     	return fList;
     }
     
@@ -82,16 +82,20 @@ public class SlidePageActivity extends FragmentActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
+        
+		
+	    // Get the SearchView and set the searchable configuration
+	    SearchManager searchManager = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
+	    SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+	    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+	    
+	    // Do not iconify the widget;expand it by default
+	    searchView.setIconifiedByDefault(false);
 
-//        // Get the SearchView and set the searchable configuration
-//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-//        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
-//
-//        // Assumes current activity is the searchable activity
-//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-//        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
-        return true;
+        
+        
+        return super.onCreateOptionsMenu(menu);
     }  
 
            

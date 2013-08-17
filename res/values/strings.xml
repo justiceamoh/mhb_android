@@ -7,7 +7,7 @@
     <string name="ui_title_title">Title</string>
     <string name="ui_author_title">Author</string>
     
-   <string name="search_hint">Search hymn...</string>
+   <string name="search_hint">Search hymn</string>
    <string name="search_label"></string> 
    <string name="action_search">Search</string> 
     

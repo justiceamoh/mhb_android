@@ -26,10 +26,10 @@ public class SearchActivity extends Activity implements
 
 		
 		 // Get the SearchView and set the searchable configuration
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-		searchView = (SearchView) findViewById(R.id.menu_search);
-		
-		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//		searchView = (SearchView) findViewById(R.id.menu_search);
+//		
+//		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 		searchView.setIconifiedByDefault(false);
 		searchView.setOnQueryTextListener(this);
 		searchView.setOnCloseListener(this);
