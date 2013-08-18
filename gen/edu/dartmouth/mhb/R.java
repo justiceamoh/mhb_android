@@ -57,8 +57,8 @@ public final class R {
         public static final int menu_search=0x7f09000a;
         public static final int pager=0x7f090006;
         public static final int sauthor=0x7f090009;
-        public static final int snumber=0x7f090007;
-        public static final int stitle=0x7f090008;
+        public static final int snumber=0x7f090008;
+        public static final int stitle=0x7f090007;
         public static final int textAuthor=0x7f090003;
         public static final int textLyrics=0x7f090004;
         public static final int textNumber=0x7f090001;

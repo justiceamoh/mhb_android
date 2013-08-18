@@ -24,8 +24,9 @@ public class HymnArrayAdapter extends ArrayAdapter<Hymn> {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(R.layout.hymnresult, parent, false);
-		TextView number = (TextView) rowView.findViewById(R.id.snumber);
+		
 		TextView title = (TextView) rowView.findViewById(R.id.stitle);
+		TextView number = (TextView) rowView.findViewById(R.id.snumber);
 		TextView author = (TextView) rowView.findViewById(R.id.sauthor);
 
 		number.setText("MHB " + String.valueOf(hymns.get(position).getId()));

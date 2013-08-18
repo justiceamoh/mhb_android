@@ -6,13 +6,13 @@
     android:padding="5dp" >
 
     <TextView
-        android:id="@+id/snumber"
+        android:id="@+id/stitle"
         style="@android:style/TextAppearance.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/stitle"
+        android:id="@+id/snumber"
         style="@android:style/TextAppearance.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
