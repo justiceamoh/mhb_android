@@ -46,17 +46,38 @@ public class HymnsDataSource {
 	}
 
 	// TODO check search database method
-	public Cursor searchHymn(String inputText) throws SQLException {
-
+//	public Cursor searchHymn(String inputText) throws SQLException {
+//
+//		String query = "SELECT * FROM " + Globals.KEY_TABLE + " WHERE "
+//				+ Globals.KEY_TABLE + " MATCH '" + inputText + "';";
+//		Cursor mCursor = database.rawQuery(query, null);
+//
+//		if (mCursor != null) {
+//			mCursor.moveToFirst();
+//		}
+//
+//		return mCursor;
+//	}
+	
+	public List<Hymn> searchHymn(String inputText) throws SQLException {
+		List<Hymn> hymns = new ArrayList<Hymn>();
+		
+		
 		String query = "SELECT * FROM " + Globals.KEY_TABLE + " WHERE "
 				+ Globals.KEY_TABLE + " MATCH '" + inputText + "';";
-		Cursor mCursor = database.rawQuery(query, null);
+		Cursor cursor = database.rawQuery(query, null);
 
-		if (mCursor != null) {
-			mCursor.moveToFirst();
+		if (cursor != null) {
+			cursor.moveToFirst();
+			while (!cursor.isAfterLast()) {
+				Hymn hymn = cursorToHymn(cursor);
+				hymns.add(hymn);
+				cursor.moveToNext();
+			}
 		}
-
-		return mCursor;
+		
+		cursor.close();
+		return hymns;
 	}
 
 	public List<Hymn> getAllHymns() {
