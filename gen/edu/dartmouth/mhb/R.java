@@ -17,12 +17,12 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
-        public static final int author_size=0x7f050003;
-        public static final int lyrics_size=0x7f050005;
-        public static final int number_size=0x7f050004;
-        public static final int title_size=0x7f050002;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
+        public static final int author_size=0x7f060003;
+        public static final int lyrics_size=0x7f060005;
+        public static final int number_size=0x7f060004;
+        public static final int title_size=0x7f060002;
     }
     public static final class drawable {
         public static final int ic_action_attach=0x7f020000;
@@ -51,14 +51,17 @@ public final class R {
         public static final int ic_launcher=0x7f020017;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000b;
+        public static final int action_settings=0x7f09000e;
         public static final int btnLoad=0x7f090000;
+        public static final int inner_content=0x7f090006;
         public static final int list=0x7f090005;
-        public static final int menu_search=0x7f09000a;
-        public static final int pager=0x7f090006;
-        public static final int sauthor=0x7f090009;
-        public static final int snumber=0x7f090008;
-        public static final int stitle=0x7f090007;
+        public static final int menu_search=0x7f09000d;
+        public static final int pager=0x7f090007;
+        public static final int sauthor=0x7f09000a;
+        public static final int slidedout_cover=0x7f09000c;
+        public static final int slideout_placeholder=0x7f09000b;
+        public static final int snumber=0x7f090009;
+        public static final int stitle=0x7f090008;
         public static final int textAuthor=0x7f090003;
         public static final int textLyrics=0x7f090004;
         public static final int textNumber=0x7f090001;
@@ -70,20 +73,21 @@ public final class R {
         public static final int activity_slide_page=0x7f030002;
         public static final int fragment_slide_page=0x7f030003;
         public static final int hymnresult=0x7f030004;
+        public static final int slideout=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_search=0x7f060007;
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int hymn_text=0x7f060008;
-        public static final int search_hint=0x7f060005;
-        public static final int search_label=0x7f060006;
-        public static final int ui_author_title=0x7f060004;
-        public static final int ui_number_title=0x7f060002;
-        public static final int ui_title_title=0x7f060003;
+        public static final int action_search=0x7f050007;
+        public static final int action_settings=0x7f050001;
+        public static final int app_name=0x7f050000;
+        public static final int hymn_text=0x7f050008;
+        public static final int search_hint=0x7f050005;
+        public static final int search_label=0x7f050006;
+        public static final int ui_author_title=0x7f050004;
+        public static final int ui_number_title=0x7f050002;
+        public static final int ui_title_title=0x7f050003;
     }
     public static final class style {
         /** 
