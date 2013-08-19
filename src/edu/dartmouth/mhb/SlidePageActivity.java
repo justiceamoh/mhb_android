@@ -83,27 +83,26 @@ public class SlidePageActivity extends FragmentActivity {
 		// Do not iconify the widget;expand it by default
 		searchView.setIconifiedByDefault(false);
 		
-		
-		
-		final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
-		    @Override
-		    public boolean onQueryTextChange(String newText) {
-		        // Do something
-		    	
-		    	Intent i = new Intent(context, SearchActivity.class);
-		    	i.putExtra(SearchManager.QUERY, newText);
-		    	startActivity(i); 		    	
-		        return true;
-		    }
-
-		    @Override
-		    public boolean onQueryTextSubmit(String query) {
-		        // Do something
-		        return true;
-		    }
-		};
-
-		searchView.setOnQueryTextListener(queryTextListener);		
+				
+//		final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
+//		    @Override
+//		    public boolean onQueryTextChange(String newText) {
+//		        // Do something
+//		    	
+//		    	Intent i = new Intent(context, SearchActivity.class);
+//		    	i.putExtra(SearchManager.QUERY, newText);
+//		    	startActivity(i); 		    	
+//		        return true;
+//		    }
+//
+//		    @Override
+//		    public boolean onQueryTextSubmit(String query) {
+//		        // Do something
+//		        return true;
+//		    }
+//		};
+//
+//		searchView.setOnQueryTextListener(queryTextListener);		
 		
 
 		return super.onCreateOptionsMenu(menu);
