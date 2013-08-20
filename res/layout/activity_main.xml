@@ -1,61 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <Button
-        android:id="@+id/btnLoad"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
-        android:onClick="onLoadClicked"
-        android:text="Next" />
-
-    <TextView
-        android:id="@+id/textNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="@string/ui_number_title"
-        android:textSize="@dimen/number_size" />
-
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/ui_title_title"
-        android:textSize="@dimen/title_size"
-        android:textStyle="bold"
-        android:typeface="serif" />
-
-    <TextView
-        android:id="@+id/textAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/ui_author_title"
-        android:textSize="@dimen/author_size"
-        android:textStyle="italic" />
-
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:layout_marginBottom="10dp">
-
-        <TextView
-            android:id="@+id/textLyrics"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/hymn_text" />
-    </ScrollView>
-
-</LinearLayout>
+        android:layout_height="match_parent" />
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#111"/>
+</android.support.v4.widget.DrawerLayout>
