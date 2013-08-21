@@ -8,12 +8,13 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
+
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -28,15 +29,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 
-public class MainActiivity extends FragmentActivity {
-	Context context;
-	MySQLiteHelper myDBHelper;
-	private HymnsDataSource datasource;
-	private List<Hymn> hymns;
-	
+
+public class HymnActivity extends FragmentActivity {
 	private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;		    
     private ActionBarDrawerToggle mDrawerToggle;
@@ -45,8 +41,11 @@ public class MainActiivity extends FragmentActivity {
     private CharSequence mTitle;
     private String[] mDrawerMenuTitles;
     
-    
-    
+	Context context;
+	MySQLiteHelper myDBHelper;
+	private HymnsDataSource datasource;
+	private List<Hymn> hymns;
+	     
 	private ViewPager mPager;
 	private PagerAdapter mPagerAdapter;
 
@@ -54,7 +53,7 @@ public class MainActiivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);	    
 		
-		setContentView(R.layout.activity_slide_page);
+		setContentView(R.layout.activity_main);
 
 		mTitle = mDrawerTitle = getTitle();
 		mDrawerMenuTitles = getResources().getStringArray(R.array.sidebar_array);
@@ -63,6 +62,9 @@ public class MainActiivity extends FragmentActivity {
 		
         //TODO work on array adapter for drawer items
         // Set the adapter for the list view
+        // set a custom shadow that overlays the main content when the drawer opens
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
                 R.layout.drawer_item, mDrawerMenuTitles));
         // Set the list's click listener
@@ -72,28 +74,29 @@ public class MainActiivity extends FragmentActivity {
         // enable ActionBar app icon to behave as action to toggle nav drawer
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+        
        
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
-        mDrawerToggle = new ActionBarDrawerToggle(
-                this,                  /* host Activity */
-                mDrawerLayout,         /* DrawerLayout object */
-                R.drawable.ic_drawer,  /* nav drawer image to replace 'Up' caret */
-                R.string.drawer_open,  /* "open drawer" description for accessibility */
-                R.string.drawer_close  /* "close drawer" description for accessibility */
-                ) {
-            public void onDrawerClosed(View view) {
-                getActionBar().setTitle(mTitle);
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-            }
-
-            public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(mDrawerTitle);
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-            }
-        };
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        
+//        mDrawerToggle = new ActionBarDrawerToggle(
+//                this,                  /* host Activity */
+//                mDrawerLayout,         /* DrawerLayout object */
+//                R.drawable.ic_drawer,  /* nav drawer image to replace 'Up' caret */
+//                R.string.drawer_open,  /* "open drawer" description for accessibility */
+//                R.string.drawer_close  /* "close drawer" description for accessibility */
+//                ) {
+//            public void onDrawerClosed(View view) {
+//                getActionBar().setTitle(mTitle);
+//                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+//            }
+//
+//            public void onDrawerOpened(View drawerView) {
+//                getActionBar().setTitle(mDrawerTitle);
+//                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+//            }
+//        };
+//        mDrawerLayout.setDrawerListener(mDrawerToggle);
+//        
         
         
         
@@ -103,11 +106,11 @@ public class MainActiivity extends FragmentActivity {
 		datasource.open();
 		hymns = datasource.getAllHymns();
 
-		List<Fragment> fragments = getFragments();
-		// Instantiate a ViewPager and a PagerAdapter.
-		mPager = (ViewPager) findViewById(R.id.pager);
-		mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
-		mPager.setAdapter(mPagerAdapter);
+//		List<Fragment> fragments = getFragments();
+//		// Instantiate a ViewPager and a PagerAdapter.
+//		mPager = (ViewPager) findViewById(R.id.pager);
+//		mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
+//		mPager.setAdapter(mPagerAdapter);
 
 	}
 
