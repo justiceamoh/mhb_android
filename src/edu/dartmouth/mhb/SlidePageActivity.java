@@ -34,9 +34,9 @@ public class SlidePageActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-			finish();
-		}
+//		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+//			finish();
+//		}
 
 		setContentView(R.layout.activity_slide_page);
 		ActionBar actionBar = getActionBar();
