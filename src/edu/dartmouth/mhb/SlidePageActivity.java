@@ -8,20 +8,18 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
+
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.TypedValue;
+
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.SearchView;
 
-import com.korovyansk.android.slideout.SlideoutActivity;
+import android.widget.SearchView;
 
 public class SlidePageActivity extends FragmentActivity {
 	Context context;
@@ -35,15 +33,15 @@ public class SlidePageActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-	    if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB){
-	    	finish();
-	    }		
-	    
+
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+			finish();
+		}
+
 		setContentView(R.layout.activity_slide_page);
-	    ActionBar actionBar = getActionBar();
-	    actionBar.setDisplayHomeAsUpEnabled(true);
-		
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+
 		context = getApplicationContext();
 		datasource = new HymnsDataSource(this);
 		datasource.open();
@@ -71,7 +69,7 @@ public class SlidePageActivity extends FragmentActivity {
 
 	private List<Fragment> getFragments() {
 		List<Fragment> fList = new ArrayList<Fragment>();
-		
+
 		int no_hymns = hymns.size();
 		for (int i = 0; i < no_hymns; i++) {
 			fList.add(SlidePageFragment.newInstance(hymns.get(i)));
@@ -101,19 +99,6 @@ public class SlidePageActivity extends FragmentActivity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if(item.getItemId() == android.R.id.home){
-			int width = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
-			SlideoutActivity.prepare(SlidePageActivity.this, R.id.inner_content, width);
-			startActivity(new Intent(SlidePageActivity.this, MenuActivity.class));
-			overridePendingTransition(0, 0);
-		}
-		return true;
-	}	
-	
-	
 	@Override
 	public void onBackPressed() {
 		if (mPager.getCurrentItem() == 0) {
