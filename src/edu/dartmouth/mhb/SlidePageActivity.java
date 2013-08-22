@@ -8,7 +8,7 @@ import java.util.Locale;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
-import android.content.Context;
+import android.content.Context; 
 
 import android.content.res.Configuration;
 
