@@ -91,7 +91,7 @@ public final class R {
         public static final int fragment_menu_canticles=0x7f030005;
         public static final int fragment_menu_creeds=0x7f030006;
         public static final int fragment_menu_favorites=0x7f030007;
-        public static final int fragment_menu_hymn=0x7f030008;
+        public static final int fragment_menu_hymns=0x7f030008;
         public static final int fragment_menu_today=0x7f030009;
         public static final int fragment_planet=0x7f03000a;
         public static final int fragment_slide_page=0x7f03000b;

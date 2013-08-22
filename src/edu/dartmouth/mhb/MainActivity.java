@@ -3,7 +3,7 @@ package edu.dartmouth.mhb;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Fragment;
+
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
@@ -11,7 +11,9 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -129,17 +131,17 @@ public class MainActivity extends FragmentActivity {
 		super.onPause();
 	}
 
-	private List<Fragment> getFragments() {
-		List<Fragment> fList = new ArrayList<Fragment>();
-
-		int no_hymns = hymns.size();
-		for (int i = 0; i < no_hymns; i++) {
-			fList.add(SlidePageFragment.newInstance(hymns.get(i)));
-
-		}
-
-		return fList;
-	}
+//	private List<Fragment> getFragments() {
+//		List<Fragment> fList = new ArrayList<Fragment>();
+//
+//		int no_hymns = hymns.size();
+//		for (int i = 0; i < no_hymns; i++) {
+//			fList.add(SlidePageFragment.newInstance(hymns.get(i)));
+//
+//		}
+//
+//		return fList;
+//	}
 
 	// TODO: menu options and next/previous actions
 	@Override
@@ -196,24 +198,24 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 
-	private class SlidePageAdapter extends FragmentPagerAdapter {
-		private List<Fragment> fragments;
-
-		public SlidePageAdapter(FragmentManager fm, List<Fragment> fragments) {
-			super(fm);
-			this.fragments = fragments;
-		}
-
-		@Override
-		public Fragment getItem(int position) {
-			return this.fragments.get(position);
-		}
-
-		@Override
-		public int getCount() {
-			return this.fragments.size();
-		}
-	} 
+//	private class SlidePageAdapter extends FragmentPagerAdapter {
+//		private List<Fragment> fragments;
+//
+//		public SlidePageAdapter(FragmentManager fm, List<Fragment> fragments) {
+//			super(fm);
+//			this.fragments = fragments;
+//		}
+//
+//		@Override
+//		public Fragment getItem(int position) {
+//			return this.fragments.get(position);
+//		}
+//
+//		@Override
+//		public int getCount() {
+//			return this.fragments.size();
+//		}
+//	} 
     
 /////////////////////////////
 ////Drawer Layout Methods////
@@ -233,9 +235,13 @@ public class MainActivity extends FragmentActivity {
 //        args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
 //        fragment.setArguments(args);
     	
-    	Fragment fragment = Fragment.instantiate(context, mFragments[pos]);
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+        tx.replace(R.id.content_frame, Fragment.instantiate(MainActivity.this, mFragments[pos]));
+        tx.commit();    	
+    	
+//    	Fragment fragment = Fragment.instantiate(context, mFragments[pos]);
+//        FragmentManager fragmentManager = getFragmentManager();
+//        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(pos, true);
