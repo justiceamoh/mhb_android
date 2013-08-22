@@ -2,17 +2,12 @@ package edu.dartmouth.mhb;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
-import android.content.Context; 
-
+import android.content.Context;
 import android.content.res.Configuration;
-
-
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -21,17 +16,12 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -52,12 +42,20 @@ public class MainActivity extends FragmentActivity {
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mDrawerMenuTitles;	
-		
+    
+	final String[] mFragments ={
+			"edu.dartmouth.mhb.MenuTodayFragment",
+			"edu.dartmouth.mhb.MenuHymnsFragment",
+			"edu.dartmouth.mhb.MenuCanticlesFragment",
+			"edu.dartmouth.mhb.MenuCreedsFragment",
+			"edu.dartmouth.mhb.MenuFavoritesFragment",
+			"edu.dartmouth.mhb.MenuAboutFragment"};   		
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		context = getApplicationContext();
 		
         mTitle = mDrawerTitle = getTitle();
         mDrawerMenuTitles = getResources().getStringArray(R.array.drawer_menu_array);
@@ -98,14 +96,17 @@ public class MainActivity extends FragmentActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
-            selectItem(1);
+            selectItem(0);
         }        
         
         
-		context = getApplicationContext();
+
 		datasource = new HymnsDataSource(this);
 		datasource.open();
 		hymns = datasource.getAllHymns();
+		
+		
+		
 
 //		List<Fragment> fragments = getFragments();
 //		// Instantiate a ViewPager and a PagerAdapter.
@@ -226,19 +227,19 @@ public class MainActivity extends FragmentActivity {
         }
     }    
     
-    private void selectItem(int position) {
+    private void selectItem(int pos) {
         // update the main content by replacing fragments
-        Fragment fragment = new PlanetFragment();
-        Bundle args = new Bundle();
-        args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
-        fragment.setArguments(args);
-
+//        Bundle args = new Bundle();
+//        args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
+//        fragment.setArguments(args);
+    	
+    	Fragment fragment = Fragment.instantiate(context, mFragments[pos]);
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         // update selected item and title, then close the drawer
-        mDrawerList.setItemChecked(position, true);
-        setTitle(mDrawerMenuTitles[position]);
+        mDrawerList.setItemChecked(pos, true);
+        setTitle(mDrawerMenuTitles[pos]);
         mDrawerLayout.closeDrawer(mDrawerList);
     }    
 
@@ -263,34 +264,10 @@ public class MainActivity extends FragmentActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
+        // Pass any configuration change to the drawer toggle
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
-    /**
-     * Fragment that appears in the "content_frame", shows a planet
-     */
-    public static class PlanetFragment extends Fragment {
-        public static final String ARG_PLANET_NUMBER = "planet_number";
-
-        public PlanetFragment() {
-            // Empty constructor required for fragment subclasses
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
-            int i = getArguments().getInt(ARG_PLANET_NUMBER);
-            String planet = getResources().getStringArray(R.array.drawer_menu_array)[i];
-
-            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
-                            "drawable", getActivity().getPackageName());
-            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-            getActivity().setTitle(planet);
-            return rootView;
-        }
-    }    
+    
     
 
 }
