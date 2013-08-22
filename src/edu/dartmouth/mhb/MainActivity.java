@@ -36,7 +36,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 
-public class SlidePageActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity {
 	Context context;
 	MySQLiteHelper myDBHelper;
 	private HymnsDataSource datasource;
@@ -51,7 +51,7 @@ public class SlidePageActivity extends FragmentActivity {
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    private String[] mPlanetTitles;	
+    private String[] mDrawerMenuTitles;	
 		
 
 	@Override
@@ -60,7 +60,7 @@ public class SlidePageActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		
         mTitle = mDrawerTitle = getTitle();
-        mPlanetTitles = getResources().getStringArray(R.array.planets_array);
+        mDrawerMenuTitles = getResources().getStringArray(R.array.drawer_menu_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -68,7 +68,7 @@ public class SlidePageActivity extends FragmentActivity {
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         // set up the drawer's list view with items and click listener
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.drawer_list_item, mPlanetTitles));
+                R.layout.drawer_list_item, mDrawerMenuTitles));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
 		
@@ -98,7 +98,7 @@ public class SlidePageActivity extends FragmentActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
-            selectItem(0);
+            selectItem(1);
         }        
         
         
@@ -238,7 +238,7 @@ public class SlidePageActivity extends FragmentActivity {
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);
-        setTitle(mPlanetTitles[position]);
+        setTitle(mDrawerMenuTitles[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
     }    
 
@@ -282,7 +282,7 @@ public class SlidePageActivity extends FragmentActivity {
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
             int i = getArguments().getInt(ARG_PLANET_NUMBER);
-            String planet = getResources().getStringArray(R.array.planets_array)[i];
+            String planet = getResources().getStringArray(R.array.drawer_menu_array)[i];
 
             int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
                             "drawable", getActivity().getPackageName());
