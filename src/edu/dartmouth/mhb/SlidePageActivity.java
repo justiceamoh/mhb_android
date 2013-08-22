@@ -52,8 +52,7 @@ public class SlidePageActivity extends FragmentActivity {
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mPlanetTitles;	
-	
-	
+		
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,14 +107,15 @@ public class SlidePageActivity extends FragmentActivity {
 		datasource.open();
 		hymns = datasource.getAllHymns();
 
-		List<Fragment> fragments = getFragments();
-		// Instantiate a ViewPager and a PagerAdapter.
-		mPager = (ViewPager) findViewById(R.id.pager);
-		mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
-		mPager.setAdapter(mPagerAdapter);
+//		List<Fragment> fragments = getFragments();
+//		// Instantiate a ViewPager and a PagerAdapter.
+//		mPager = (ViewPager) findViewById(R.id.pager);
+//		mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
+//		mPager.setAdapter(mPagerAdapter);
 
 	}
 
+	
 	@Override
 	protected void onResume() {
 		datasource.open();
