@@ -1,6 +1,10 @@
 package edu.dartmouth.mhb;
 
-public class Hymn {
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
+
+public class Hymn implements Parcelable{
 	private long id;
 	private String title;
 	private String author;
@@ -8,15 +12,42 @@ public class Hymn {
 	private String lyrics;
 
 	
-	//Constructor for Hymn class
+	//Constructors for Hymn class
 	public Hymn(){
 		
-		id = Long.MIN_VALUE;
-		title = null;
-		author=null;
-		url = null;
-		lyrics=null;		
+		this.id = Long.MIN_VALUE;
+		this.title = null;
+		this.author=null;
+		this.url = null;
+		this.lyrics=null;		
 	}
+	
+	public Hymn(Long id, String title, String author, String url, String lyrics){
+		
+		this.id = id;
+		this.title = title;
+		this.author=author;
+		this.url = url;
+		this.lyrics=lyrics;		
+	}
+	
+	/**
+     * This will be used only by the MyCreator
+     * @param source
+     */
+    public Hymn(Parcel source){
+          /*
+           * Reconstruct from the Parcel
+           */
+          Log.v(Globals.TAG, "ParcelData(Parcel source): time to put back parcel data");
+          id = source.readLong();
+          title = source.readString();
+          author = source.readString();
+          url=source.readString();
+          lyrics=source.readString();
+    }
+	
+	
 	
   	public long getId() {
 	    return this.id;
@@ -59,7 +90,35 @@ public class Hymn {
 
 	 public void setLyrics(String val){
 		 this.lyrics = val;
-	 }	 
+	 }
 
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+	      Log.v(Globals.TAG, "writeToParcel..."+ flags);
+	      dest.writeLong(id);
+	      dest.writeString(title);
+	      dest.writeString(author);
+	      dest.writeString(url);
+	      dest.writeString(lyrics);
+	}	 
+
+	/**
+	 * It will be required during un-marshaling data stored in a Parcel
+	 */
+	public class MyCreator implements Parcelable.Creator<Hymn> {
+	      public Hymn createFromParcel(Parcel source) {
+	            return new Hymn(source);
+	      }
+	      public Hymn[] newArray(int size) {
+	            return new Hymn[size];
+	      }
+	}	
 	
 }

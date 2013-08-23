@@ -80,8 +80,8 @@ public class HymnsDataSource {
 		return hymns;
 	}
 
-	public List<Hymn> getAllHymns() {
-		List<Hymn> hymns = new ArrayList<Hymn>();
+	public ArrayList<Hymn> getAllHymns() {
+		ArrayList<Hymn> hymns = new ArrayList<Hymn>();
 
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_HYMNS, allColumns,
 				null, null, null, null, null);
