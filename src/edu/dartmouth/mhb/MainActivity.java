@@ -31,8 +31,6 @@ public class MainActivity extends FragmentActivity {
 	private HymnsDataSource datasource;
 	private ArrayList<Hymn> hymns;
 
-	private ViewPager mPager;
-	private PagerAdapter mPagerAdapter;
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -104,13 +102,6 @@ public class MainActivity extends FragmentActivity {
 		datasource = new HymnsDataSource(this);
 		datasource.open();
 		hymns = datasource.getAllHymns();
-
-		// List<Fragment> fragments = getFragments();
-		// // Instantiate a ViewPager and a PagerAdapter.
-		// mPager = (ViewPager) findViewById(R.id.pager);
-		// mPagerAdapter = new SlidePageAdapter(getFragmentManager(),
-		// fragments);
-		// mPager.setAdapter(mPagerAdapter);
 
 	}
 

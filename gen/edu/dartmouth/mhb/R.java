@@ -60,41 +60,44 @@ public final class R {
         public static final int mercury=0x7f02001d;
         public static final int neptune=0x7f02001e;
         public static final int saturn=0x7f02001f;
-        public static final int uranus=0x7f020020;
-        public static final int venus=0x7f020021;
+        public static final int splash=0x7f020020;
+        public static final int uranus=0x7f020021;
+        public static final int venus=0x7f020022;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0010;
+        public static final int action_settings=0x7f0a0011;
         public static final int content_frame=0x7f0a0001;
         public static final int drawer_layout=0x7f0a0000;
-        public static final int image=0x7f0a0007;
-        public static final int inner_content=0x7f0a0005;
+        public static final int image=0x7f0a0008;
+        public static final int inner_content=0x7f0a0006;
         public static final int left_drawer=0x7f0a0002;
         public static final int list=0x7f0a0003;
-        public static final int menu_search=0x7f0a000f;
-        public static final int pager=0x7f0a0006;
-        public static final int sauthor=0x7f0a000e;
-        public static final int snumber=0x7f0a000d;
-        public static final int stitle=0x7f0a000c;
-        public static final int textAuthor=0x7f0a000a;
-        public static final int textLyrics=0x7f0a000b;
-        public static final int textNumber=0x7f0a0008;
-        public static final int textTitle=0x7f0a0009;
-        public static final int textView1=0x7f0a0004;
+        public static final int menu_search=0x7f0a0010;
+        public static final int pager=0x7f0a0007;
+        public static final int sauthor=0x7f0a000f;
+        public static final int snumber=0x7f0a000e;
+        public static final int splashscreen=0x7f0a0004;
+        public static final int stitle=0x7f0a000d;
+        public static final int textAuthor=0x7f0a000b;
+        public static final int textLyrics=0x7f0a000c;
+        public static final int textNumber=0x7f0a0009;
+        public static final int textTitle=0x7f0a000a;
+        public static final int textView1=0x7f0a0005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_search_view=0x7f030001;
-        public static final int drawer_list_item=0x7f030002;
-        public static final int fragment_menu_about=0x7f030003;
-        public static final int fragment_menu_canticles=0x7f030004;
-        public static final int fragment_menu_creeds=0x7f030005;
-        public static final int fragment_menu_favorites=0x7f030006;
-        public static final int fragment_menu_hymns=0x7f030007;
-        public static final int fragment_menu_today=0x7f030008;
-        public static final int fragment_planet=0x7f030009;
-        public static final int fragment_slide_page=0x7f03000a;
-        public static final int hymnresult=0x7f03000b;
+        public static final int activity_splashscreen=0x7f030002;
+        public static final int drawer_list_item=0x7f030003;
+        public static final int fragment_menu_about=0x7f030004;
+        public static final int fragment_menu_canticles=0x7f030005;
+        public static final int fragment_menu_creeds=0x7f030006;
+        public static final int fragment_menu_favorites=0x7f030007;
+        public static final int fragment_menu_hymns=0x7f030008;
+        public static final int fragment_menu_today=0x7f030009;
+        public static final int fragment_planet=0x7f03000a;
+        public static final int fragment_slide_page=0x7f03000b;
+        public static final int hymnresult=0x7f03000c;
     }
     public static final class menu {
         public static final int main=0x7f090000;
