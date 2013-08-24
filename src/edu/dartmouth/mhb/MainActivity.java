@@ -94,13 +94,13 @@ public class MainActivity extends FragmentActivity {
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-		if (savedInstanceState == null) {
-			selectItem(0);
-		}
-
 		datasource = new HymnsDataSource(this);
 		datasource.open();
 		hymns = datasource.getAllHymns();
+
+        if (savedInstanceState == null) {
+            selectItem(1);
+        }
 
 	}
 

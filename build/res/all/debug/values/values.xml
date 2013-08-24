@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/Junior/workspace/mhb/res/values/strings.xml -->
+    <string-array name="drawer_menu_array">
+        <item>Today</item>
+        <item>Hymns</item>
+        <item>Canticles</item>
+        <item>Creeds</item>
+        <item>Favorites</item>
+        <item>About</item>
+    </string-array>
+    <!-- From: file:/Users/Junior/workspace/mhb/res/values/dimens.xml -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="author_size">14sp</dimen>
+    <dimen name="lyrics_size">16sp</dimen>
+    <dimen name="number_size">15sp</dimen>
+    <dimen name="title_size">18sp</dimen>
+    <!-- From: file:/Users/Junior/workspace/mhb/res/values/strings.xml -->
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Methodist Hymn Book</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="hymn_text">Begone unbelief</string>
+    <string name="search_hint">Search hymn</string>
+    <string name="search_label"></string>
+    <string name="ui_author_title">Author</string>
+    <string name="ui_number_title">Mhb No.</string>
+    <string name="ui_title_title">Title</string>
+    <!-- From: file:/Users/Junior/workspace/mhb/res/values/styles.xml -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="SplashTheme" parent="@android:Theme.Black">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@drawable/splash</item>
+    </style>
+
+</resources>

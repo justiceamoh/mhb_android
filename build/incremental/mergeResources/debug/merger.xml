@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/Junior/workspace/mhb/res" >
+            <file
+                name="splash"
+                path="/Users/Junior/workspace/mhb/res/drawable/splash.jpg"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/drawer_shadow.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_attach"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_attach.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_call"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_call.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_copy"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_copy.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_cut"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_cut.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_delete"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_delete.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_done"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_done.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_edit"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_edit.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_locate"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_locate.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_mail"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_mail.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_mail_add"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_mail_add.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_microphone"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_microphone.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_overflow"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_overflow.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_paste"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_paste.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_photo"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_photo.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_refresh.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_search"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_search.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_select_all"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_select_all.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_send"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_send.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_share"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_share.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_star"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_star.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_user"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_user.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_user_add"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_user_add.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_video"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_video.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_drawer.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/drawer_shadow.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_attach"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_attach.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_call"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_call.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_copy"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_copy.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_cut"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_cut.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_delete"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_delete.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_done"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_done.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_edit"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_edit.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_locate"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_locate.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_mail"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_mail.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_mail_add"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_mail_add.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_microphone"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_microphone.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_overflow"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_overflow.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_paste"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_paste.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_photo"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_photo.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_refresh.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_search"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_search.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_select_all"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_select_all.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_send"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_send.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_share"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_share.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_star"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_star.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_user"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_user.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_user_add"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_user_add.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_video"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_video.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_drawer.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/drawer_shadow.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_attach"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_attach.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_call"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_call.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_copy"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_copy.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_cut"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_cut.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_delete"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_delete.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_done"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_done.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_edit"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_edit.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_locate"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_locate.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_mail"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_mail.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_mail_add"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_mail_add.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_microphone"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_microphone.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_overflow"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_overflow.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_paste"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_paste.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_photo"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_photo.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_refresh.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_search"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_search.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_select_all"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_select_all.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_send"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_send.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_share"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_share.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_star"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_star.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_user"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_user.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_user_add"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_user_add.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_video"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_video.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_drawer.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/Junior/workspace/mhb/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="activity_main"
+                path="/Users/Junior/workspace/mhb/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_search_view"
+                path="/Users/Junior/workspace/mhb/res/layout/activity_search_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_splashscreen"
+                path="/Users/Junior/workspace/mhb/res/layout/activity_splashscreen.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="drawer_list_item"
+                path="/Users/Junior/workspace/mhb/res/layout/drawer_list_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_menu_about"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_menu_about.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_menu_canticles"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_menu_canticles.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_menu_creeds"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_menu_creeds.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_menu_favorites"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_menu_favorites.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_menu_hymns"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_menu_hymns.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_menu_today"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_menu_today.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_planet"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_planet.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_slide_page"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_slide_page.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="hymnresult"
+                path="/Users/Junior/workspace/mhb/res/layout/hymnresult.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="/Users/Junior/workspace/mhb/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="/Users/Junior/workspace/mhb/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="number_size" >15sp
+                </dimen>
+                <dimen name="title_size" >18sp
+                </dimen>
+                <dimen name="author_size" >14sp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="lyrics_size" >16sp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/Junior/workspace/mhb/res/values/strings.xml"
+                qualifiers="" >
+                <string name="ui_author_title" >Author
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="hymn_text" >Begone unbelief
+                </string>
+                <string name="search_label" ></string>
+                <string name="ui_number_title" >Mhb No.
+                </string>
+                <string name="app_name" >Methodist Hymn Book
+                </string>
+                <string name="action_search" >Search
+                </string>
+                <string name="search_hint" >Search hymn
+                </string>
+                <string name="ui_title_title" >Title
+                </string>
+
+                <string-array name="drawer_menu_array" >
+                    <item>
+Today
+                    </item>
+                    <item>
+Hymns
+                    </item>
+                    <item>
+Canticles
+                    </item>
+                    <item>
+Creeds
+                    </item>
+                    <item>
+Favorites
+                    </item>
+                    <item>
+About
+                    </item>
+                </string-array>
+
+                <string name="drawer_open" >Open navigation drawer
+                </string>
+                <string name="drawer_close" >Close navigation drawer
+                </string>
+            </file>
+            <file
+                path="/Users/Junior/workspace/mhb/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="SplashTheme"
+                    parent="@android:Theme.Black" >
+                    <item name="android:windowNoTitle">
+true
+                    </item>
+                    <item name="android:background">
+@drawable/splash
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/Junior/workspace/mhb/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/Junior/workspace/mhb/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/Junior/workspace/mhb/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                name="searchable"
+                path="/Users/Junior/workspace/mhb/res/xml/searchable.xml"
+                qualifiers=""
+                type="xml" />
+        </source>
+        <source path="/Users/Junior/workspace/mhb/build/res/rs/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/Junior/workspace/mhb/build-types/debug/res" />
+    </dataSet>
+
+</merger>

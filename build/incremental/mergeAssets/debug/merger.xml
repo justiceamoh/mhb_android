@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/Junior/workspace/mhb/assets" >
+            <file
+                name="mhb.db"
+                path="/Users/Junior/workspace/mhb/assets/mhb.db" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/Junior/workspace/mhb/build-types/debug/assets" />
+    </dataSet>
+
+</merger>
