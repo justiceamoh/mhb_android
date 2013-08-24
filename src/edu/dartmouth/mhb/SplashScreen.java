@@ -9,13 +9,12 @@ import android.view.WindowManager;
 
 public class SplashScreen extends Activity {
 
-	private final int DURATION = 10000;
+	private final int DURATION = 8000;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         
         setContentView(R.layout.activity_splashscreen);
                 
