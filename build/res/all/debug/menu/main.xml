@@ -5,11 +5,25 @@
           android:icon="@drawable/ic_action_search"
           android:showAsAction="ifRoom|collapseActionView"
           android:actionViewClass="android.widget.SearchView" />
-        
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+
+    <item android:id="@+id/action_browse"
+          android:title="@string/action_browse"
+          android:icon="@drawable/ic_action_browse"
+          android:showAsAction="always" />
+
+    <item android:id="@+id/action_format"
+          android:title="@string/action_format"
+          android:icon="@drawable/ic_action_format"
+          android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_back"
+          android:title="@string/action_back"
+          android:icon="@drawable/ic_action_back"
+          android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_forward"
+          android:title="@string/action_forward"
+          android:icon="@drawable/ic_action_forward"
+          android:showAsAction="ifRoom" />
 
 </menu><!-- From: file:/Users/Junior/workspace/mhb/res/menu/main.xml -->

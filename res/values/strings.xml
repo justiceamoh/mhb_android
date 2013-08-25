@@ -8,7 +8,12 @@
     <string name="ui_author_title">Author</string>
     <string name="search_hint">Search hymn</string>
     <string name="search_label"></string>
+
     <string name="action_search">Search</string>
+    <string name="action_browse">Browse</string>
+    <string name="action_format">Format</string>
+    <string name="action_forward">Forward</string>
+    <string name="action_back">Backward</string>
 
 
     <string-array name="drawer_menu_array">

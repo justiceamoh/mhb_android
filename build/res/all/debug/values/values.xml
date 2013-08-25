@@ -18,6 +18,10 @@
     <dimen name="number_size">15sp</dimen>
     <dimen name="title_size">18sp</dimen>
     <!-- From: file:/Users/Junior/workspace/mhb/res/values/strings.xml -->
+    <string name="action_back">Backward</string>
+    <string name="action_browse">Browse</string>
+    <string name="action_format">Format</string>
+    <string name="action_forward">Forward</string>
     <string name="action_search">Search</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">Methodist Hymn Book</string>
