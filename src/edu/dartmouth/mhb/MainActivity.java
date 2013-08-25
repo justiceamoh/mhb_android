@@ -48,7 +48,7 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTheme(R.style.AppTheme);
+		setTheme(R.style.MainTheme);
 		setContentView(R.layout.activity_main);
 		context = getApplicationContext();
 
@@ -71,8 +71,12 @@ public class MainActivity extends FragmentActivity {
 		ActionBar actionbar = getActionBar();
 		actionbar.setDisplayHomeAsUpEnabled(true);
 		actionbar.setHomeButtonEnabled(true);
-       // actionbar.setBackgroundDrawable(R.drawable.actionbar_background);
 
+        //actionbar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
+
+        //TODO toggle hide and show action bar on touch
+//        actionbar.hide();
+//        actionbar.show();
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the sliding drawer and the action bar app icon

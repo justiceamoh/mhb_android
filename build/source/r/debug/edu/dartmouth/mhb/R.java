@@ -129,12 +129,13 @@ public final class R {
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f080000;
+        /**  All customizations that are NOT specific to a particular API-level can go here. 
+         */
         public static final int AppTheme=0x7f080001;
-        public static final int MyActionBar=0x7f080002;
+        public static final int MainTheme=0x7f080002;
         public static final int SplashTheme=0x7f080003;
     }
     public static final class xml {
-        public static final int actionbar_background=0x7f040000;
-        public static final int searchable=0x7f040001;
+        public static final int searchable=0x7f040000;
     }
 }
