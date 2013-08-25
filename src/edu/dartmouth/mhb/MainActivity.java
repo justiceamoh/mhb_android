@@ -69,8 +69,10 @@ public class MainActivity extends FragmentActivity {
 
 		// enable ActionBar app icon to behave as action to toggle nav drawer
 		ActionBar actionbar = getActionBar();
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
+		actionbar.setDisplayHomeAsUpEnabled(true);
+		actionbar.setHomeButtonEnabled(true);
+       // actionbar.setBackgroundDrawable(R.drawable.actionbar_background);
+
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the sliding drawer and the action bar app icon
