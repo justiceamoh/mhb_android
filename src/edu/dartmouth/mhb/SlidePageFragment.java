@@ -63,8 +63,9 @@ public class SlidePageFragment extends Fragment {
     	str_val = hymn.getLyrics();
     	((TextView) rootView.findViewById(R.id.textLyrics)).setText(str_val);
 
-        TextView tv = (TextView) rootView.findViewById(R.id.textLyrics);
 
+        //TODO move action bar toggling into MainActivity
+        TextView tv = (TextView) rootView.findViewById(R.id.textLyrics);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
