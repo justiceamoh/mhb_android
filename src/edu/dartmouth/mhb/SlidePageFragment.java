@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class SlidePageFragment extends Fragment {
 	
 	private Hymn hymn;
+    private Boolean showBar = true;
 	
 	//Construct a new page for a given hymn
 	public static SlidePageFragment newInstance(Hymn hymn){
@@ -28,6 +29,7 @@ public class SlidePageFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hymn = new Hymn();
+
         hymn.setId(getArguments().getLong(Globals.KEY_ID));
         hymn.setAuthor(getArguments().getString(Globals.KEY_AUTHOR));
         hymn.setTitle(getArguments().getString(Globals.KEY_TITLE));
@@ -60,6 +62,23 @@ public class SlidePageFragment extends Fragment {
     	//Set Lyrics from db
     	str_val = hymn.getLyrics();
     	((TextView) rootView.findViewById(R.id.textLyrics)).setText(str_val);
+
+        TextView tv = (TextView) rootView.findViewById(R.id.textLyrics);
+
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                if(showBar) // Toggle action bar visiblity
+                    getActivity().getActionBar().hide();
+                else
+                    getActivity().getActionBar().show();
+
+                showBar = !showBar;
+
+            }
+        });
+
              
         return rootView;
     }
