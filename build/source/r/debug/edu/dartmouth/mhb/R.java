@@ -27,7 +27,7 @@ public final class R {
         public static final int title_size=0x7f060005;
     }
     public static final class drawable {
-        public static final int actionbar_background=0x7f020000;
+        public static final int action_background=0x7f020000;
         public static final int drawer_shadow=0x7f020001;
         public static final int ic_action_back=0x7f020002;
         public static final int ic_action_browse=0x7f020003;
@@ -134,7 +134,8 @@ public final class R {
          */
         public static final int AppTheme=0x7f080001;
         public static final int MainTheme=0x7f080002;
-        public static final int SplashTheme=0x7f080003;
+        public static final int MyActionBar=0x7f080003;
+        public static final int SplashTheme=0x7f080004;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;
