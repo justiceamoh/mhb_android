@@ -135,7 +135,8 @@ public final class R {
         public static final int AppTheme=0x7f080001;
         public static final int MainTheme=0x7f080002;
         public static final int MyActionBar=0x7f080003;
-        public static final int SplashTheme=0x7f080004;
+        public static final int MyActionBar_TitleTextStyle=0x7f080004;
+        public static final int SplashTheme=0x7f080005;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;
