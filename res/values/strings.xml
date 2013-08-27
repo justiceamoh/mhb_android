@@ -10,10 +10,12 @@
     <string name="search_label"></string>
 
     <string name="action_search">Search</string>
-    <string name="action_browse">Browse</string>
+    <string name="action_contents">Contents</string>
     <string name="action_format">Format</string>
-    <string name="action_forward">Forward</string>
-    <string name="action_back">Backward</string>
+    <string name="action_day_night">Day/Night</string>
+    <string name="content_tab_title">Titles</string>
+    <string name="content_tab_number">MHB No.</string>
+    <string name="content_tab_author">Authors</string>
 
 
     <string-array name="drawer_menu_array">

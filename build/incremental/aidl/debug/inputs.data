@@ -1,18 +1,18 @@
 # incremental data. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
-1377337487000 798 8a461c9df8b94f179103b1cb469310af7f15173e /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/SplashScreen.java
+1377445661000 798 275fb10a828dccc17706958e08774cdbf4eb3ec5 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/SplashScreen.java
 1377015989000 512 cbe89d71a305e308a17d9fd7d69ac2e4ef41a8c3 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/Globals.java
 1377266442000 948 b94e4634bb77e2bf288b815cc4095f13c04c094a /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MenuFragments/MenuAboutFragment.java
 1377266442000 2644 eeb9a73c6b492642af5ae893809ca06dba6a05d6 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/HymnsDataSource.java
 1377266442000 917 57b6d3d927cb37673030f4523c76b912a8af1c67 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MenuFragments/MenuCreedsFragment.java
 1377268649000 2055 43cf2542da66c2d0c8124e6c791739b883f320f8 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MenuFragments/MenuHymnsFragment.java
-1377015989000 1870 bf9e53fbe6992ffc4573b19b56269fc4865c2e5b /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/SearchActivity.java
-1377362861000 7270 da4ea663247f918c3efea01e7dc884ff6ecebb4d /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MainActivity.java
+1377626991000 1890 54ce9bcd1bbf55aaa978c7cf2bf4265b6247f293 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/SearchActivity.java
+1377627414000 7540 ee8f107b3a1bbcdacbd04e0dcbb88b444e5c46d1 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MainActivity.java
 1377015989000 3300 43f96ee0719a6a8786f16b836f3f4102d0938b82 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MySQLiteHelper.java
 1377266442000 912 830c749a0507035dad756d87da79f7dff9dae26c /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MenuFragments/MenuTodayFragment.java
 1377015989000 1193 a5a4ed98a227b1f9d821c71c7d0920a6d2614681 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/HymnArrayAdapter.java
 1377266442000 932 819244facd03a9865e2e15e8ea4bc24a40fe09e5 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MenuFragments/MenuFavoritesFragment.java
 1377266442000 941 0e1190747ec490e0c8bab09ed1d081f9a8d90940 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/MenuFragments/MenuCanticlesFragment.java
 1377266442000 2454 8f25fa67365ecdb8cf8d532097d7645595927123 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/Hymn.java
-1377266442000 2081 47e23ef607bee272988bdc4c03e8922fa5b425bd /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/SlidePageFragment.java
+1377627364000 2672 3e5ad23fb9d15db155b80502a806009db03d42f9 /Users/Junior/workspace/mhb/src/edu/dartmouth/mhb/SlidePageFragment.java

@@ -4,13 +4,38 @@
     <dataSet config="main" >
         <source path="/Users/Junior/workspace/mhb/res" >
             <file
+                name="action_background"
+                path="/Users/Junior/workspace/mhb/res/drawable/action_background.jpg"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="paper_texture"
+                path="/Users/Junior/workspace/mhb/res/drawable/paper_texture.jpg"
+                qualifiers=""
+                type="drawable" />
+            <file
                 name="splash"
                 path="/Users/Junior/workspace/mhb/res/drawable/splash.jpg"
                 qualifiers=""
                 type="drawable" />
             <file
+                name="ab_solid_shadow_holo"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ab_solid_shadow_holo.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
                 name="drawer_shadow"
                 path="/Users/Junior/workspace/mhb/res/drawable-hdpi/drawer_shadow.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_back"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_back.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_browse"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_browse.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
@@ -26,6 +51,16 @@
             <file
                 name="ic_action_edit"
                 path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_edit.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_format"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_format.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_forward"
+                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_forward.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
@@ -124,6 +159,16 @@
                 qualifiers="mdpi"
                 type="drawable" />
             <file
+                name="ic_action_back"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_back.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_browse"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_browse.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
                 name="ic_action_delete"
                 path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_delete.png"
                 qualifiers="mdpi"
@@ -136,6 +181,16 @@
             <file
                 name="ic_action_edit"
                 path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_edit.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_format"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_format.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_forward"
+                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_forward.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
@@ -234,6 +289,16 @@
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
+                name="ic_action_back"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_back.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_browse"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_browse.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
                 name="ic_action_delete"
                 path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_delete.png"
                 qualifiers="xhdpi"
@@ -246,6 +311,16 @@
             <file
                 name="ic_action_edit"
                 path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_edit.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_format"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_format.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_forward"
+                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_forward.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
@@ -344,6 +419,11 @@
                 qualifiers="xxhdpi"
                 type="drawable" />
             <file
+                name="activity_contents"
+                path="/Users/Junior/workspace/mhb/res/layout/activity_contents.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_main"
                 path="/Users/Junior/workspace/mhb/res/layout/activity_main.xml"
                 qualifiers=""
@@ -394,13 +474,23 @@
                 qualifiers=""
                 type="layout" />
             <file
-                name="fragment_planet"
-                path="/Users/Junior/workspace/mhb/res/layout/fragment_planet.xml"
+                name="fragment_slide_page"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_slide_page.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="fragment_slide_page"
-                path="/Users/Junior/workspace/mhb/res/layout/fragment_slide_page.xml"
+                name="fragment_tab_authors"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_tab_authors.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_tab_numbers"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_tab_numbers.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_tab_titles"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_tab_titles.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -432,28 +522,32 @@
             <file
                 path="/Users/Junior/workspace/mhb/res/values/strings.xml"
                 qualifiers="" >
+                <string name="action_day_night" >Day/Night
+                </string>
                 <string name="ui_author_title" >Author
                 </string>
                 <string name="action_settings" >Settings
                 </string>
-                <string name="action_back" >Backward
-                </string>
-                <string name="action_forward" >Forward
+                <string name="content_tab_number" >MHB No.
                 </string>
                 <string name="ui_number_title" >Mhb No.
                 </string>
                 <string name="search_hint" >Search hymn
                 </string>
+                <string name="content_tab_author" >Authors
+                </string>
                 <string name="drawer_close" >Close navigation drawer
+                </string>
+                <string name="content_tab_title" >Titles
                 </string>
                 <string name="hymn_text" >Begone unbelief
                 </string>
-                <string name="search_label" ></string>
                 <string name="app_name" >Methodist Hymn Book
                 </string>
-                <string name="action_search" >Search
-                </string>
+                <string name="search_label" ></string>
                 <string name="ui_title_title" >Title
+                </string>
+                <string name="action_search" >Search
                 </string>
 
                 <string-array name="drawer_menu_array" >
@@ -477,11 +571,11 @@ About
                     </item>
                 </string-array>
 
+                <string name="action_contents" >Contents
+                </string>
                 <string name="drawer_open" >Open navigation drawer
                 </string>
                 <string name="action_format" >Format
-                </string>
-                <string name="action_browse" >Browse
                 </string>
             </file>
             <file
@@ -489,14 +583,36 @@ About
                 qualifiers="" >
 
                 <style
+                    name="MainTheme"
+                    parent="@android:Theme.Holo.Light.DarkActionBar" >
+                    <item name="android:windowActionBarOverlay">
+true
+                    </item>
+                    <item name="android:actionBarStyle">
+@style/MyActionBar
+                    </item>
+                    <item name="android:windowBackground">
+@drawable/paper_texture
+                    </item>
+                </style>
+
+                <style
                     name="AppBaseTheme"
-                    parent="android:Theme.Light" >
+                    parent="android:Theme.Holo.Light" >
 
                     <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
                     -->
+                </style>
+
+                <style
+                    name="MyActionBar.TitleTextStyle"
+                    parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title" >
+                    <item name="android:textColor">
+#FFFFFF
+                    </item>
                 </style>
 
                 <style
@@ -507,6 +623,17 @@ true
                     </item>
                     <item name="android:background">
 @drawable/splash
+                    </item>
+                </style>
+
+                <style
+                    name="MyActionBar"
+                    parent="@android:style/Widget.Holo.ActionBar" >
+                    <item name="android:background">
+@drawable/action_background
+                    </item>
+                    <item name="android:titleTextStyle">
+@style/MyActionBar.TitleTextStyle
                     </item>
                 </style>
 
@@ -550,66 +677,6 @@ true
                 path="/Users/Junior/workspace/mhb/res/xml/searchable.xml"
                 qualifiers=""
                 type="xml" />
-            <file
-                name="ic_action_forward"
-                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_forward.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_browse"
-                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_browse.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_browse"
-                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_browse.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_back"
-                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_back.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_format"
-                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_format.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_format"
-                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_format.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_format"
-                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_format.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_back"
-                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_back.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_browse"
-                path="/Users/Junior/workspace/mhb/res/drawable-mdpi/ic_action_browse.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_back"
-                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_back.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_forward"
-                path="/Users/Junior/workspace/mhb/res/drawable-hdpi/ic_action_forward.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_forward"
-                path="/Users/Junior/workspace/mhb/res/drawable-xhdpi/ic_action_forward.png"
-                qualifiers="xhdpi"
-                type="drawable" />
         </source>
         <source path="/Users/Junior/workspace/mhb/build/res/rs/debug" />
     </dataSet>

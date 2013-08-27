@@ -1,29 +1,28 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    
-    <item android:id="@+id/menu_search"
-          android:title="@string/action_search"
-          android:icon="@drawable/ic_action_search"
-          android:showAsAction="ifRoom|collapseActionView"
-          android:actionViewClass="android.widget.SearchView" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/action_browse"
-          android:title="@string/action_browse"
-          android:icon="@drawable/ic_action_browse"
-          android:showAsAction="always" />
+    <item
+        android:id="@+id/menu_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_action_search"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/action_search" />
 
-    <item android:id="@+id/action_format"
-          android:title="@string/action_format"
-          android:icon="@drawable/ic_action_format"
-          android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_contents"
+        android:icon="@drawable/ic_action_browse"
+        android:showAsAction="always"
+        android:title="@string/action_contents" />
 
-    <item android:id="@+id/action_back"
-          android:title="@string/action_back"
-          android:icon="@drawable/ic_action_back"
-          android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_format"
+        android:icon="@drawable/ic_action_format"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_format" />
 
-    <item android:id="@+id/action_forward"
-          android:title="@string/action_forward"
-          android:icon="@drawable/ic_action_forward"
-          android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_day_night"
+        android:icon="@drawable/ic_action_back"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_day_night" />
 
 </menu><!-- From: file:/Users/Junior/workspace/mhb/res/menu/main.xml -->

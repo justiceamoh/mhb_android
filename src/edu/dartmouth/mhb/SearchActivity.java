@@ -1,7 +1,6 @@
 package edu.dartmouth.mhb;
 
-import java.util.List;
-
+import android.R;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
@@ -11,6 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.List;
+
 public class SearchActivity extends Activity {
 	private ListView mListView;
 	private HymnsDataSource datasource;
@@ -18,7 +19,7 @@ public class SearchActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_search_view);
+//		setContentView(R.layout.activity_search_view);
 
 		mListView = (ListView) findViewById(R.id.list);
 		datasource = new HymnsDataSource(this);

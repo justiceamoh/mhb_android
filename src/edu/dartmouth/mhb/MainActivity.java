@@ -1,6 +1,5 @@
 package edu.dartmouth.mhb;
 
-import java.util.ArrayList;
 
 import android.app.ActionBar;
 import android.app.SearchManager;
@@ -21,13 +20,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity {
 	Context context;
 	MySQLiteHelper myDBHelper;
 	private HymnsDataSource datasource;
 	private ArrayList<Hymn> hymns;
-
+    private boolean showBar = true;
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -191,6 +191,7 @@ public class MainActivity extends FragmentActivity {
                 bundle.putParcelableArrayList("hymn_list",hymns);
                 fragment.setArguments(bundle);
                 fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+                break;
                 
 	    	default:      
 	    		fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
@@ -228,5 +229,8 @@ public class MainActivity extends FragmentActivity {
 		// Pass any configuration change to the drawer toggle
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
+
+
+
 
 }

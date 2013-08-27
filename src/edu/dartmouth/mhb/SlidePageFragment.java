@@ -1,5 +1,6 @@
 package edu.dartmouth.mhb;
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -80,7 +81,7 @@ public class SlidePageFragment extends Fragment {
             }
         });
 
-             
+
         return rootView;
     }
     
