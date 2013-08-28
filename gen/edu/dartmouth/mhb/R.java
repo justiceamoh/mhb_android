@@ -74,7 +74,7 @@ public final class R {
         public static final int snumber=0x7f0a000e;
         public static final int splashscreen=0x7f0a0005;
         public static final int stitle=0x7f0a000d;
-        public static final int tab_container=0x7f0a0000;
+        public static final int tab_pager=0x7f0a0000;
         public static final int textAuthor=0x7f0a000b;
         public static final int textLyrics=0x7f0a000c;
         public static final int textNumber=0x7f0a0009;
