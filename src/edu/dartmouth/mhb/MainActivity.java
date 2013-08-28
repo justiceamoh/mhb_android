@@ -71,7 +71,6 @@ public class MainActivity extends FragmentActivity {
 		actionbar.setDisplayHomeAsUpEnabled(true);
 		actionbar.setHomeButtonEnabled(true);
 
-        //actionbar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
 
         //TODO toggle hide and show action bar on touch
 //        actionbar.hide();
