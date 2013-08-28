@@ -7,7 +7,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -57,7 +57,7 @@ public class MenuHymnsFragment extends Fragment {
 		return fList;
 	}
 	
-	private class SlidePageAdapter extends FragmentPagerAdapter {
+	private class SlidePageAdapter extends FragmentStatePagerAdapter {
 		private List<Fragment> fragments;
 
 		public SlidePageAdapter(FragmentManager fm, List<Fragment> fragments) {

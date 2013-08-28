@@ -27,7 +27,6 @@ public class MainActivity extends FragmentActivity {
 	MySQLiteHelper myDBHelper;
 	private HymnsDataSource datasource;
 	private ArrayList<Hymn> hymns;
-    private boolean showBar = true;
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
