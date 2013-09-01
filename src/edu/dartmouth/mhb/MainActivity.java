@@ -4,6 +4,7 @@ package edu.dartmouth.mhb;
 import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -27,6 +28,7 @@ public class MainActivity extends FragmentActivity {
 	MySQLiteHelper myDBHelper;
 	private HymnsDataSource datasource;
 	private ArrayList<Hymn> hymns;
+    private boolean showBar = true;
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -71,6 +73,7 @@ public class MainActivity extends FragmentActivity {
 		actionbar.setDisplayHomeAsUpEnabled(true);
 		actionbar.setHomeButtonEnabled(true);
 
+        //actionbar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
 
         //TODO toggle hide and show action bar on touch
 //        actionbar.hide();
@@ -160,6 +163,15 @@ public class MainActivity extends FragmentActivity {
 			return true;
 		}
 		// TODO Switch Statement to handle menu item selection
+
+		switch(item.getItemId()){
+			case R.id.action_contents:
+//				Intent intent = new Intent(this,ContentsActivity.class);				
+//				intent.putExtra("hymn_list", hymns);
+//				startActivity(intent);
+				break;				 
+		}
+		
 		return super.onOptionsItemSelected(item);
 	}
 

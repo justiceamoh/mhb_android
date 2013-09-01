@@ -444,6 +444,11 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="fragment_contents_list"
+                path="/Users/Junior/workspace/mhb/res/layout/fragment_contents_list.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="fragment_menu_about"
                 path="/Users/Junior/workspace/mhb/res/layout/fragment_menu_about.xml"
                 qualifiers=""

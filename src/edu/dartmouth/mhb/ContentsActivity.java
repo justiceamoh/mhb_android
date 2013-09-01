@@ -32,42 +32,42 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contents);
     
-        Bundle args = getIntent().getExtras();
-        hymns = args.getParcelableArrayList("hymn_list");
-        
-        //Create tab fragment lists
-        // ViewPager and its adapters use support library
-        // fragments, so use getSupportFragmentManager.
-        fList = getContentFragments();
-        mContentsPagerAdapter = new ContentsPagerAdapter(getSupportFragmentManager(),
-                fList);
-
-        final ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
-        // Specify that tabs should be displayed in the action bar.
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//        Bundle args = getIntent().getExtras();
+//        hymns = args.getParcelableArrayList("hymn_list");
+//        
+//        //Create tab fragment lists
+//        // ViewPager and its adapters use support library
+//        // fragments, so use getSupportFragmentManager.
+//        fList = getContentFragments();
+//        mContentsPagerAdapter = new ContentsPagerAdapter(getSupportFragmentManager(),
+//                fList);
+//
+//        final ActionBar actionBar = getActionBar();
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+//
+//        // Specify that tabs should be displayed in the action bar.
+//        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         // Set up the ViewPager, attaching the adapter and setting up a listener for when the
         // user swipes between sections.
-        mViewPager = (ViewPager) findViewById(R.id.tab_pager);
-        mViewPager.setAdapter(mContentsPagerAdapter);
-        mViewPager.setOnPageChangeListener(
-            new ViewPager.SimpleOnPageChangeListener() {
-                @Override
-                public void onPageSelected(int position) {
-                    getActionBar().setSelectedNavigationItem(position);
-                }
-        });  
+//        mViewPager = (ViewPager) findViewById(R.id.tab_pager);
+//        mViewPager.setAdapter(mContentsPagerAdapter);
+//        mViewPager.setOnPageChangeListener(
+//            new ViewPager.SimpleOnPageChangeListener() {
+//                @Override
+//                public void onPageSelected(int position) {
+//                    getActionBar().setSelectedNavigationItem(position);
+//                }
+//        });  
 
-        // For each of the sections in the app, add a tab to the action bar.
-        for (int i = 0; i < mContentsPagerAdapter.getCount(); i++) {
-            actionBar.addTab(actionBar.newTab()
-                            .setText(mContentsPagerAdapter.getPageTitle(i))
-                            .setTabListener(this));
-        }
-
-   
+//        // For each of the sections in the app, add a tab to the action bar.
+//        for (int i = 0; i < mContentsPagerAdapter.getCount(); i++) {
+//            actionBar.addTab(actionBar.newTab()
+//                            .setText(mContentsPagerAdapter.getPageTitle(i))
+//                            .setTabListener(this));
+//        }
+//
+//   
         
     }
     

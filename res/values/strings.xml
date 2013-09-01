@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Methodist Hymn Book</string>
+    <string name="app_name">MHB</string>
     <string name="action_settings">Settings</string>
     <string name="ui_number_title">Mhb No.</string>
     <string name="ui_title_title">Title</string>

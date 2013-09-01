@@ -59,26 +59,27 @@ public final class R {
         public static final int splash=0x7f02001d;
     }
     public static final class id {
-        public static final int action_contents=0x7f0a0011;
-        public static final int action_day_night=0x7f0a0013;
-        public static final int action_format=0x7f0a0012;
+        public static final int action_contents=0x7f0a0012;
+        public static final int action_day_night=0x7f0a0014;
+        public static final int action_format=0x7f0a0013;
         public static final int content_frame=0x7f0a0002;
+        public static final int contents_list=0x7f0a0006;
         public static final int drawer_layout=0x7f0a0001;
-        public static final int inner_content=0x7f0a0007;
+        public static final int inner_content=0x7f0a0008;
         public static final int left_drawer=0x7f0a0003;
         public static final int list=0x7f0a0004;
-        public static final int menu_search=0x7f0a0010;
-        public static final int pager=0x7f0a0008;
-        public static final int sauthor=0x7f0a000f;
-        public static final int snumber=0x7f0a000e;
+        public static final int menu_search=0x7f0a0011;
+        public static final int pager=0x7f0a0009;
+        public static final int sauthor=0x7f0a0010;
+        public static final int snumber=0x7f0a000f;
         public static final int splashscreen=0x7f0a0005;
-        public static final int stitle=0x7f0a000d;
-        public static final int tab_container=0x7f0a0000;
-        public static final int textAuthor=0x7f0a000b;
-        public static final int textLyrics=0x7f0a000c;
-        public static final int textNumber=0x7f0a0009;
-        public static final int textTitle=0x7f0a000a;
-        public static final int textView1=0x7f0a0006;
+        public static final int stitle=0x7f0a000e;
+        public static final int tab_pager=0x7f0a0000;
+        public static final int textAuthor=0x7f0a000c;
+        public static final int textLyrics=0x7f0a000d;
+        public static final int textNumber=0x7f0a000a;
+        public static final int textTitle=0x7f0a000b;
+        public static final int textView1=0x7f0a0007;
     }
     public static final class layout {
         public static final int activity_contents=0x7f030000;
@@ -86,17 +87,18 @@ public final class R {
         public static final int activity_search_view=0x7f030002;
         public static final int activity_splashscreen=0x7f030003;
         public static final int drawer_list_item=0x7f030004;
-        public static final int fragment_menu_about=0x7f030005;
-        public static final int fragment_menu_canticles=0x7f030006;
-        public static final int fragment_menu_creeds=0x7f030007;
-        public static final int fragment_menu_favorites=0x7f030008;
-        public static final int fragment_menu_hymns=0x7f030009;
-        public static final int fragment_menu_today=0x7f03000a;
-        public static final int fragment_slide_page=0x7f03000b;
-        public static final int fragment_tab_authors=0x7f03000c;
-        public static final int fragment_tab_numbers=0x7f03000d;
-        public static final int fragment_tab_titles=0x7f03000e;
-        public static final int hymnresult=0x7f03000f;
+        public static final int fragment_contents_list=0x7f030005;
+        public static final int fragment_menu_about=0x7f030006;
+        public static final int fragment_menu_canticles=0x7f030007;
+        public static final int fragment_menu_creeds=0x7f030008;
+        public static final int fragment_menu_favorites=0x7f030009;
+        public static final int fragment_menu_hymns=0x7f03000a;
+        public static final int fragment_menu_today=0x7f03000b;
+        public static final int fragment_slide_page=0x7f03000c;
+        public static final int fragment_tab_authors=0x7f03000d;
+        public static final int fragment_tab_numbers=0x7f03000e;
+        public static final int fragment_tab_titles=0x7f03000f;
+        public static final int hymnresult=0x7f030010;
     }
     public static final class menu {
         public static final int main=0x7f090000;
