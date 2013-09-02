@@ -27,8 +27,7 @@ public class MainActivity extends FragmentActivity {
 	Context context;
 	MySQLiteHelper myDBHelper;
 	private HymnsDataSource datasource;
-	private ArrayList<Hymn> hymns;
-    private boolean showBar = true;
+	public static ArrayList<Hymn> hymns;
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -73,11 +72,8 @@ public class MainActivity extends FragmentActivity {
 		actionbar.setDisplayHomeAsUpEnabled(true);
 		actionbar.setHomeButtonEnabled(true);
 
-        //actionbar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
-
         //TODO toggle hide and show action bar on touch
-//        actionbar.hide();
-//        actionbar.show();
+
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the sliding drawer and the action bar app icon
@@ -166,9 +162,8 @@ public class MainActivity extends FragmentActivity {
 
 		switch(item.getItemId()){
 			case R.id.action_contents:
-//				Intent intent = new Intent(this,ContentsActivity.class);				
-//				intent.putExtra("hymn_list", hymns);
-//				startActivity(intent);
+				Intent intent = new Intent(this,ContentsActivity.class);				
+				startActivity(intent);
 				break;				 
 		}
 		
@@ -197,7 +192,8 @@ public class MainActivity extends FragmentActivity {
         switch(pos)
         {
         	case 1:
-                Bundle bundle = new Bundle();
+                //TODO remove bundles since hymns have been changed to public static
+        		Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList("hymn_list",hymns);
                 fragment.setArguments(bundle);
                 fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
