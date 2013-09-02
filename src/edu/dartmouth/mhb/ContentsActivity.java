@@ -13,9 +13,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 
 
@@ -30,11 +32,12 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		setTheme(R.style.MainTheme);
+		//TODO Change theme to allow for visible tabs
+        setTheme(R.style.MainTheme);
         setContentView(R.layout.activity_contents);
     
       final ActionBar actionBar = getActionBar();
-//      actionBar.setDisplayHomeAsUpEnabled(true);        
+      actionBar.setDisplayHomeAsUpEnabled(true);        
         
       
     // Specify that tabs should be displayed in the action bar.
@@ -73,6 +76,23 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
    
         
     }
+    
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+        // Handle item selection
+        switch (item.getItemId()) 
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    
     
     
     public ArrayList<Fragment> getContentFragments(){
@@ -158,10 +178,10 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     	public View onCreateView(LayoutInflater inflater,
     			ViewGroup container, Bundle savedInstanceState) {
     		View rootView = inflater.inflate(
-    				R.layout.fragment_contents_list,container,false);
+    				R.layout.fragment_contents_grid,container,false);
     		
     		//Setup layout here.
-    		final ListView listview = (ListView) rootView.findViewById(R.id.contents_list);
+    		final GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
     	    ArrayList<String> titles = new ArrayList<String>();
     	    for (int i=0; i<hymns.size();i++){
     	    	titles.add(String.valueOf(hymns.get(i).getId()));
@@ -169,7 +189,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     	    
 	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 	            android.R.layout.simple_list_item_1, titles);
-	        listview.setAdapter(adapter);    		
+	        gridview.setAdapter(adapter);    		
     		
     		return rootView;
     	}    	
