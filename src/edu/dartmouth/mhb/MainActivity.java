@@ -74,7 +74,6 @@ public class MainActivity extends FragmentActivity {
 
         //TODO toggle hide and show action bar on touch
 
-
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the sliding drawer and the action bar app icon
 		mDrawerToggle = new ActionBarDrawerToggle(this, /* host Activity */
@@ -188,22 +187,7 @@ public class MainActivity extends FragmentActivity {
 	private void selectItem(int pos) {
         Fragment fragment = Fragment.instantiate(MainActivity.this, mFragments[pos]);
         FragmentManager fragmentManager = getSupportFragmentManager();
-
-        switch(pos)
-        {
-        	case 1:
-                //TODO remove bundles since hymns have been changed to public static
-        		Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("hymn_list",hymns);
-                fragment.setArguments(bundle);
-                fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-                break;
-                
-	    	default:      
-	    		fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-        }
-   	
-
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(pos, true);

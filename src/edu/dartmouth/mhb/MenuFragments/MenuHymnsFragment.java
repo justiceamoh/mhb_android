@@ -10,12 +10,17 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.dartmouth.mhb.Globals;
 import edu.dartmouth.mhb.Hymn;
+import edu.dartmouth.mhb.MainActivity;
 import edu.dartmouth.mhb.R;
 
 public class MenuHymnsFragment extends Fragment {
@@ -28,14 +33,15 @@ public class MenuHymnsFragment extends Fragment {
 		return f;
 	}
 
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		ViewGroup root = (ViewGroup) inflater.inflate(
 				R.layout.fragment_menu_hymns, null);
-
-		hymns = getArguments().getParcelableArrayList("hymn_list");
+		
+		hymns = MainActivity.hymns;
 		
 		 List<Fragment> fragments = getFragments();
 		 // Instantiate a ViewPager and a PagerAdapter.
@@ -43,9 +49,30 @@ public class MenuHymnsFragment extends Fragment {
 		 mPagerAdapter = new SlidePageAdapter(getFragmentManager(),
 		 fragments);
 		 mPager.setAdapter(mPagerAdapter);
+		 
+		 
+		 
+		 Button goNextButton = (Button) root.findViewById(R.id.button_next);
+		    goNextButton.setOnClickListener(new OnClickListener() {
+
+		     @Override
+		           public void onClick(View view) {
+		               mPager.setCurrentItem(getItem(+1), true); //getItem(-1) for previous
+		           }
+		        });
 		
+		 Button goPrevButton = (Button) root.findViewById(R.id.button_prev);
+			 goPrevButton.setOnClickListener(new OnClickListener() {
+
+			  @Override
+			       public void onClick(View view) {
+			           mPager.setCurrentItem(getItem(-1), true); //getItem(-1) for previous
+			       }
+			    });
+   	    		    		    
 		return root;
 	}
+	
 	
 	
 	private List<Fragment> getFragments() {
@@ -53,12 +80,26 @@ public class MenuHymnsFragment extends Fragment {
 		int no_hymns = hymns.size();
 		for (int i = 0; i < no_hymns; i++) {
 			fList.add(SlidePageFragment.newInstance(hymns.get(i)));
-
+			
 		}
 		return fList;
 	}
 	
+	private int getItem(int i) {
+	    int a = mPager.getCurrentItem();
+	    i += a;
+	    return i;
+	}
 	
+//	public void goToPage(int pageno) {
+//	    // Do something in response to button click
+//		mPager.setCurrentItem(pageno, true);
+//		
+////		yourViewPager.setCurrentItem(page, smoothScroll);
+//	}
+//	
+//	
+
 	
 	private class SlidePageAdapter extends FragmentStatePagerAdapter {
 		private List<Fragment> fragments;
