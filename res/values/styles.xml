@@ -25,7 +25,7 @@
     <style name="MainTheme" parent="@android:Theme.Holo.Light.DarkActionBar">
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:actionBarStyle">@style/MyActionBar</item>
-        <item name="android:windowBackground">@drawable/paper_texture</item>
+        <item name="android:windowBackground">@drawable/bg</item>
     </style>
 
     <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">

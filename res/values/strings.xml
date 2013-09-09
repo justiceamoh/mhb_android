@@ -8,7 +8,6 @@
     <string name="ui_author_title">Author</string>
     <string name="search_hint">Search hymn</string>
     <string name="search_label"></string>
-
     <string name="action_search">Search</string>
     <string name="action_contents">Contents</string>
     <string name="action_format">Format</string>
@@ -16,7 +15,6 @@
     <string name="content_tab_title">Titles</string>
     <string name="content_tab_number">MHB No.</string>
     <string name="content_tab_author">Authors</string>
-
 
     <string-array name="drawer_menu_array">
         <item>Today</item>
@@ -29,6 +27,6 @@
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-    <string name="hymn_text">Begone unbelief</string>
+    <string name="hymn_text">Begone unbelief, My Saviour is near And for my relief, will surely appear By prayer let me wrestle, and He will perform With Christ in the vessel, I smile at the storm</string>
 
 </resources>

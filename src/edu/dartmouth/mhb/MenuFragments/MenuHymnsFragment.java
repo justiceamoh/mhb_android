@@ -10,14 +10,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import edu.dartmouth.mhb.Globals;
 import edu.dartmouth.mhb.Hymn;
 import edu.dartmouth.mhb.MainActivity;
@@ -40,6 +38,8 @@ public class MenuHymnsFragment extends Fragment {
 			Bundle savedInstanceState) {
 		ViewGroup root = (ViewGroup) inflater.inflate(
 				R.layout.fragment_menu_hymns, null);
+		
+		getActivity().getActionBar().hide();
 		
 		hymns = MainActivity.hymns;
 		
@@ -91,14 +91,13 @@ public class MenuHymnsFragment extends Fragment {
 	    return i;
 	}
 	
-//	public void goToPage(int pageno) {
-//	    // Do something in response to button click
-//		mPager.setCurrentItem(pageno, true);
-//		
-////		yourViewPager.setCurrentItem(page, smoothScroll);
-//	}
-//	
-//	
+	public void goToPage(int pageno) {
+	    // Do something in response to button click
+		mPager.setCurrentItem(pageno, true);
+		
+	}
+	
+	
 
 	
 	private class SlidePageAdapter extends FragmentStatePagerAdapter {
@@ -126,7 +125,7 @@ public class MenuHymnsFragment extends Fragment {
 	public static class SlidePageFragment extends Fragment {
 		
 		private Hymn hymn;
-	    private Boolean showBar = true;
+	    private Boolean showBar = false;
 		
 		//Construct a new page for a given hymn
 		public static SlidePageFragment newInstance(Hymn hymn){
