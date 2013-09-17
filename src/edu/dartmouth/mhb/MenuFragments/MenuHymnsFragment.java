@@ -156,7 +156,7 @@ public class MenuHymnsFragment extends Fragment {
 	    public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	            Bundle savedInstanceState) {
 	        ViewGroup rootView = (ViewGroup) inflater.inflate(
-	                R.layout.fragment_slide_page, container, false);
+	                R.layout.fragment_hymn_page, container, false);
 
 	        String str_val;
 	        

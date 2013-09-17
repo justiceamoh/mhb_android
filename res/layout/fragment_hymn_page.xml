@@ -8,6 +8,7 @@
         android:id="@+id/textNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_offset"
         android:text="@string/ui_number_title"
         android:textSize="@dimen/number_size" />
 
@@ -32,13 +33,16 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/bottom_offset" >
 
         <TextView
             android:id="@+id/textLyrics"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:paddingLeft="@dimen/hymn_side_padding"
+            android:paddingRight="@dimen/hymn_side_padding"
             android:text="@string/hymn_text" />
     </ScrollView>
 

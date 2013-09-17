@@ -4,9 +4,17 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="title_size">18sp</dimen>
-	<dimen name="author_size">14sp</dimen>
+	<dimen name="author_size">13sp</dimen>
 	<dimen name="number_size">15sp</dimen>
 	<dimen name="lyrics_size">16sp</dimen>
+	
+	<dimen name="hymn_side_padding">40dp</dimen>
+	<dimen name="top_offset">12dp</dimen>
+	<dimen name="bottom_offset">25dp</dimen>
+	<dimen name="hymn_text_padding">50dp</dimen>
+	<dimen name="title_side_padding">10dp</dimen>
+	
+	
 	
 	
 </resources>
