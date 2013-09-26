@@ -6,6 +6,8 @@ import java.util.List;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -33,7 +35,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		//TODO Change theme to allow for visible tabs
-        setTheme(R.style.MainTheme);
+        setTheme(R.style.ContentTheme);
         setContentView(R.layout.activity_contents);
     
       final ActionBar actionBar = getActionBar();
@@ -73,6 +75,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
                             .setTabListener(this));
         }
 
+        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#55000000")));
    
         
     }

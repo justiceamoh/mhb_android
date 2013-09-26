@@ -220,7 +220,6 @@ public class MainActivity extends FragmentActivity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
-
-
+	
 
 }
