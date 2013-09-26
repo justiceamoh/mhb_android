@@ -1,6 +1,8 @@
 package edu.dartmouth.mhb;
 
 
+import java.util.ArrayList;
+
 import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.Context;
@@ -21,7 +23,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-import java.util.ArrayList;
+import edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment;
 
 public class MainActivity extends FragmentActivity {
 	Context context;
@@ -162,12 +164,32 @@ public class MainActivity extends FragmentActivity {
 		switch(item.getItemId()){
 			case R.id.action_contents:
 				Intent intent = new Intent(this,ContentsActivity.class);				
-				startActivity(intent);
+				startActivityForResult(intent,1);
 				break;				 
 		}
 		
 		return super.onOptionsItemSelected(item);
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    switch(requestCode) {
+	    case 1:
+	        if (resultCode == RESULT_OK) {
+	            Bundle res = data.getExtras();
+	            int result = res.getInt("result");
+	            
+	            //open hymn fragment to result page
+//	            Bundle args = new Bundle();
+//	            args.putInt("page_no", result);
+	            //TODO implement so it works on all fragments
+	            MenuHymnsFragment f= (MenuHymnsFragment) getSupportFragmentManager().findFragmentById(R.id.content_frame);
+	            f.goToPage(result);
+	            
+	        }
+	        break;
+	    }
+	}
+
 
 
 	// ///////////////////////////

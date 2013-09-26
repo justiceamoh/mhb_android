@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
@@ -29,6 +31,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     ContentsPagerAdapter mContentsPagerAdapter;
     ViewPager mViewPager;
     List<Fragment> fList;
+    static Intent returnIntent;
     static ArrayList<Hymn> hymns;
     
     
@@ -47,6 +50,8 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
       
         hymns = MainActivity.hymns;
 //        
+        returnIntent = new Intent();
+
         //Create tab fragment lists
         // ViewPager and its adapters use support library
         // fragments, so use getSupportFragmentManager.
@@ -76,7 +81,11 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
         }
 
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#55000000")));
-   
+        
+//        returnIntent.putExtra("result",result);
+//        setResult(RESULT_OK,returnIntent);     
+//        finish();
+
         
     }
     
@@ -172,6 +181,19 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	            android.R.layout.simple_list_item_1, titles);
 	        listview.setAdapter(adapter);    		
     		
+	        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+	            @Override
+	            public void onItemClick(AdapterView<?> parent, final View view,
+	                int position, long id) {
+	              returnIntent.putExtra("result",position);
+	              getActivity().setResult(RESULT_OK,returnIntent);     
+	              getActivity().finish();
+	            }
+
+	          });
+	        
+	        
     		return rootView;
     	}
     }
