@@ -1,6 +1,7 @@
 package edu.dartmouth.mhb;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import android.app.ActionBar;
@@ -33,7 +34,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     List<Fragment> fList;
     static Intent returnIntent;
     static ArrayList<Hymn> hymns;
-    
+    static ArrayList<String> titles;
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +87,12 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 //        setResult(RESULT_OK,returnIntent);     
 //        finish();
 
+	    titles = new ArrayList<String>();
+	    for (int i=0; i<hymns.size();i++){
+	    	titles.add(hymns.get(i).getTitle());
+	    }   	    
+	    //Sort titles by alphabetic order
+	    Collections.sort(titles);        
         
     }
     
@@ -163,7 +170,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
   
     
     public static class ContentsTitlesFragment extends Fragment{
-    	
+    //TODO	Sort titles in alphabetical order
     	@Override
     	public View onCreateView(LayoutInflater inflater,
     			ViewGroup container, Bundle savedInstanceState) {
@@ -172,10 +179,8 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     		
     		//Setup layout here.
     		final ListView listview = (ListView) rootView.findViewById(R.id.contents_list);
-    	    ArrayList<String> titles = new ArrayList<String>();
-    	    for (int i=0; i<hymns.size();i++){
-    	    	titles.add(hymns.get(i).getTitle());
-    	    }
+
+    	    
     	    
 	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 	            android.R.layout.simple_list_item_1, titles);
@@ -186,6 +191,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	            @Override
 	            public void onItemClick(AdapterView<?> parent, final View view,
 	                int position, long id) {
+	            	
 	              returnIntent.putExtra("result",position);
 	              getActivity().setResult(RESULT_OK,returnIntent);     
 	              getActivity().finish();
