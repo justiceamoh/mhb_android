@@ -1,10 +1,12 @@
 package edu.dartmouth.mhb;
 
+import java.util.Comparator;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-public class Hymn implements Parcelable{
+public class Hymn implements Parcelable {
 	private long id;
 	private String title;
 	private String author;
@@ -119,6 +121,31 @@ public class Hymn implements Parcelable{
 	      public Hymn[] newArray(int size) {
 	            return new Hymn[size];
 	      }
-	}	
+	}
+
+
+
+	// Comparators
+	public static Comparator<Hymn> HymnTitleComparator = new Comparator<Hymn>() {
+		@Override
+		public int compare(Hymn a, Hymn b) {
+			return a.getTitle().compareTo(b.getTitle());
+		}
+	};
+
+	public static Comparator<Hymn> HymnIdComparator = new Comparator<Hymn>() {
+		@Override
+		public int compare(Hymn a, Hymn b) {
+			return (int) (a.getId() - b.getId());
+		}
+	};
+
+	public static Comparator<Hymn> HymnAuthorComparator = new Comparator<Hymn>() {
+		@Override
+		public int compare(Hymn a, Hymn b) {
+			return a.getAuthor().compareTo(b.getAuthor());
+		}
+	};	
+	
 	
 }

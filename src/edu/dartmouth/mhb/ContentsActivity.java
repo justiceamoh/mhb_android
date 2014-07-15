@@ -1,7 +1,9 @@
 package edu.dartmouth.mhb;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.app.ActionBar;
@@ -34,7 +36,6 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     List<Fragment> fList;
     static Intent returnIntent;
     static ArrayList<Hymn> hymns;
-    static ArrayList<String> titles;
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +50,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     // Specify that tabs should be displayed in the action bar.
       	actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
       
-        hymns = MainActivity.hymns;
-//        
+        hymns = MainActivity.hymns;        
         returnIntent = new Intent();
 
         //Create tab fragment lists
@@ -59,7 +59,6 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
         fList = getContentFragments();
         mContentsPagerAdapter = new ContentsPagerAdapter(getSupportFragmentManager(),
                 fList);
-
 
 
         // Set up the ViewPager, attaching the adapter and setting up a listener for when the
@@ -83,16 +82,6 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#55000000")));
         
-//        returnIntent.putExtra("result",result);
-//        setResult(RESULT_OK,returnIntent);     
-//        finish();
-
-	    titles = new ArrayList<String>();
-	    for (int i=0; i<hymns.size();i++){
-	    	titles.add(hymns.get(i).getTitle());
-	    }   	    
-	    //Sort titles by alphabetic order
-	    Collections.sort(titles);        
         
     }
     
@@ -180,19 +169,24 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     		//Setup layout here.
     		final ListView listview = (ListView) rootView.findViewById(R.id.contents_list);
 
+    		//Sort hymns by alphabetical order of titles
+    	    Collections.sort(hymns, Hymn.HymnTitleComparator);    	    
     	    
-    	    
+    	    ArrayList<String> titles = new ArrayList<String>();
+    	    for (int i=0; i<hymns.size();i++){
+    	    	titles.add(hymns.get(i).getTitle());
+    	    }   	        
+    		   		
 	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 	            android.R.layout.simple_list_item_1, titles);
 	        listview.setAdapter(adapter);    		
-    		
+	        
 	        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
 	            @Override
 	            public void onItemClick(AdapterView<?> parent, final View view,
 	                int position, long id) {
-	            	
-	              returnIntent.putExtra("result",position);
+	              int loc = (int) hymns.get(position).getId() - 1;	
+	              returnIntent.putExtra("result",loc);
 	              getActivity().setResult(RESULT_OK,returnIntent);     
 	              getActivity().finish();
 	            }
@@ -211,6 +205,9 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     		View rootView = inflater.inflate(
     				R.layout.fragment_contents_grid,container,false);
     		
+    		//Sort hymns by numbers
+    	    Collections.sort(hymns, Hymn.HymnIdComparator);    
+    		
     		//Setup layout here.
     		final GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
     	    ArrayList<String> titles = new ArrayList<String>();
@@ -222,6 +219,17 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	            android.R.layout.simple_list_item_1, titles);
 	        gridview.setAdapter(adapter);    		
     		
+	        
+	        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	        	@Override
+	        	public void onItemClick(AdapterView<?> parent, final View view, int position, long id){
+	        		int loc = (int) hymns.get(position).getId();
+	        		returnIntent.putExtra("results", loc);
+		            getActivity().setResult(RESULT_OK,returnIntent);     
+		            getActivity().finish();
+	        	}
+			});
+	        
     		return rootView;
     	}    	
     }    
@@ -233,6 +241,9 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     		View rootView = inflater.inflate(
     				R.layout.fragment_contents_list,container,false);
     		
+    		//Sort hymns by numbers
+    	    Collections.sort(hymns, Hymn.HymnAuthorComparator);
+    		
     		//Setup layout here.
     		final ListView listview = (ListView) rootView.findViewById(R.id.contents_list);
     	    ArrayList<String> authors = new ArrayList<String>();
@@ -243,7 +254,19 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 	            android.R.layout.simple_list_item_1, authors);
 	        listview.setAdapter(adapter);    		
-    		
+
+	        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	            @Override
+	            public void onItemClick(AdapterView<?> parent, final View view,
+	                int position, long id) {
+	              int loc = (int) hymns.get(position).getId() - 1;	
+	              returnIntent.putExtra("result",loc);
+	              getActivity().setResult(RESULT_OK,returnIntent);     
+	              getActivity().finish();
+	            }
+
+	          });
+	        
     		return rootView;
     	}    	
     }
