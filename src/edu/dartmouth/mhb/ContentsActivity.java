@@ -18,6 +18,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -185,8 +186,10 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	            @Override
 	            public void onItemClick(AdapterView<?> parent, final View view,
 	                int position, long id) {
-	              int loc = (int) hymns.get(position).getId() - 1;	
-	              returnIntent.putExtra("result",loc);
+	              Log.d("DEBUG","Clicked position:"+ Integer.toString(position) );	
+	              long loc = hymns.get(position).getId();	
+	              Log.d("DEBUG","Hymn ID minus 1:"+ Long.toString(loc) );	
+	              returnIntent.putExtra("result",position);
 	              getActivity().setResult(RESULT_OK,returnIntent);     
 	              getActivity().finish();
 	            }
@@ -224,6 +227,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	        	@Override
 	        	public void onItemClick(AdapterView<?> parent, final View view, int position, long id){
 	        		int loc = (int) hymns.get(position).getId();
+	        		Log.d("DEBUG", "Hymn Number got:"+ Integer.toString(loc));
 	        		returnIntent.putExtra("results", loc);
 		            getActivity().setResult(RESULT_OK,returnIntent);     
 		            getActivity().finish();
