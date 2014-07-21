@@ -8,6 +8,7 @@ import java.util.List;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
@@ -35,8 +36,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     ContentsPagerAdapter mContentsPagerAdapter;
     ViewPager mViewPager;
     List<Fragment> fList;
-    static Intent returnIntent;
-    static ArrayList<Hymn> hymns;
+    ArrayList<Hymn> hymns;
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +49,8 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
         
       
     // Specify that tabs should be displayed in the action bar.
-      	actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-      
+      	actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);      	
         hymns = MainActivity.hymns;        
-        returnIntent = new Intent();
 
         //Create tab fragment lists
         // ViewPager and its adapters use support library
@@ -102,7 +100,16 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     }
     
     
-    
+    public void setReturnIntent(int hymn_id){
+    	Intent data = new Intent();
+    	data.putExtra("result",hymn_id);
+    	if (getParent() == null) {
+    	    setResult(Activity.RESULT_OK, data);
+    	} else {
+    	    getParent().setResult(Activity.RESULT_OK, data);
+    	}
+    	finish();
+    }
     
     public ArrayList<Fragment> getContentFragments(){
     	ArrayList<Fragment> frags = new ArrayList<Fragment>();
@@ -159,7 +166,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     }
   
     
-    public static class ContentsTitlesFragment extends Fragment{
+    public class ContentsTitlesFragment extends Fragment{
     //TODO	Sort titles in alphabetical order
     	@Override
     	public View onCreateView(LayoutInflater inflater,
@@ -186,12 +193,9 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	            @Override
 	            public void onItemClick(AdapterView<?> parent, final View view,
 	                int position, long id) {
-	              Log.d("DEBUG","Clicked position:"+ Integer.toString(position) );	
-	              long loc = hymns.get(position).getId();	
-	              Log.d("DEBUG","Hymn ID minus 1:"+ Long.toString(loc) );	
-	              returnIntent.putExtra("result",position);
-	              getActivity().setResult(RESULT_OK,returnIntent);     
-	              getActivity().finish();
+	              Collections.sort(hymns,Hymn.HymnTitleComparator);	
+	              int loc = (int) hymns.get(position).getId() - 1;	
+	              setReturnIntent(loc);
 	            }
 
 	          });
@@ -201,7 +205,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     	}
     }
     
-    public static class ContentsNumbersFragment extends Fragment{
+    public class ContentsNumbersFragment extends Fragment{
     	@Override
     	public View onCreateView(LayoutInflater inflater,
     			ViewGroup container, Bundle savedInstanceState) {
@@ -226,11 +230,9 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 	        	@Override
 	        	public void onItemClick(AdapterView<?> parent, final View view, int position, long id){
-	        		int loc = (int) hymns.get(position).getId();
-	        		Log.d("DEBUG", "Hymn Number got:"+ Integer.toString(loc));
-	        		returnIntent.putExtra("results", loc);
-		            getActivity().setResult(RESULT_OK,returnIntent);     
-		            getActivity().finish();
+	        		Collections.sort(hymns,Hymn.HymnIdComparator);
+	        		int loc = (int) hymns.get(position).getId() - 1;
+	        		setReturnIntent(loc);
 	        	}
 			});
 	        
@@ -238,7 +240,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     	}    	
     }    
    
-    public static class ContentsAuthorsFragment extends Fragment{
+    public class ContentsAuthorsFragment extends Fragment{
     	@Override
     	public View onCreateView(LayoutInflater inflater,
     			ViewGroup container, Bundle savedInstanceState) {
@@ -263,10 +265,9 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
 	            @Override
 	            public void onItemClick(AdapterView<?> parent, final View view,
 	                int position, long id) {
-	              int loc = (int) hymns.get(position).getId() - 1;	
-	              returnIntent.putExtra("result",loc);
-	              getActivity().setResult(RESULT_OK,returnIntent);     
-	              getActivity().finish();
+	              Collections.sort(hymns,Hymn.HymnAuthorComparator);	
+	              int loc = (int) hymns.get(position).getId() - 1;
+	              setReturnIntent(loc);
 	            }
 
 	          });
