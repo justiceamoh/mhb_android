@@ -110,7 +110,18 @@ public class MainActivity extends FragmentActivity {
 
 	@Override
 	protected void onResume() {
-		datasource.open();
+		datasource.open();		
+		
+		Bundle extras = getIntent().getExtras();
+		
+		if (extras!=null){
+			int savedId = extras.getInt("hymn_id");
+	        MenuHymnsFragment f= (MenuHymnsFragment) getSupportFragmentManager().findFragmentById(R.id.content_frame);
+	        f.goToPage(savedId);
+		}
+		
+
+        
 		super.onResume();
 	}
 

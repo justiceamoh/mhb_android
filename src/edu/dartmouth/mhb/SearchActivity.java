@@ -1,32 +1,31 @@
 package edu.dartmouth.mhb;
 
-import android.R;
+import java.util.List;
+
 import android.app.Activity;
 import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import java.util.List;
+import edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment;
 
 public class SearchActivity extends Activity {
 	private ListView mListView;
 	private HymnsDataSource datasource;
+	private static Intent returnIntent;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_search_view);
-
-		mListView = (ListView) findViewById(R.id.list);
+		setContentView(R.layout.activity_search);
+		returnIntent = new Intent(this,MainActivity.class);
+		returnIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		
+		
+		mListView = (ListView) findViewById(R.id.search_list);
 		datasource = new HymnsDataSource(this);
 		datasource.open();
 
@@ -59,16 +58,10 @@ public class SearchActivity extends Activity {
 
 							// TODO Use hymn to create slide fragment
 							Log.d(Globals.TAG, hymn.getTitle());
+							int value = (int) hymn.getId()-1;
+				            returnIntent.putExtra("hymn_id", value);
+				            startActivity(returnIntent);
 
-							// view.animate().setDuration(2000).alpha(0)
-							// .withEndAction(new Runnable() {
-							// @Override
-							// public void run() {
-							// list.remove(item);
-							// adapter.notifyDataSetChanged();
-							// view.setAlpha(1);
-							// }
-							// });
 						}
 
 					});

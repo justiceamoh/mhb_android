@@ -77,10 +77,10 @@ public final class R {
         public static final int gridview=0x7f0a0006;
         public static final int inner_content=0x7f0a000d;
         public static final int left_drawer=0x7f0a0003;
-        public static final int list=0x7f0a0004;
         public static final int menu_search=0x7f0a0014;
         public static final int pager=0x7f0a000f;
         public static final int sauthor=0x7f0a0013;
+        public static final int search_list=0x7f0a0004;
         public static final int snumber=0x7f0a0012;
         public static final int splashscreen=0x7f0a0005;
         public static final int stitle=0x7f0a0011;
@@ -94,7 +94,7 @@ public final class R {
     public static final class layout {
         public static final int activity_contents=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int activity_search_view=0x7f030002;
+        public static final int activity_search=0x7f030002;
         public static final int activity_splashscreen=0x7f030003;
         public static final int drawer_list_item=0x7f030004;
         public static final int fragment_contents_grid=0x7f030005;
