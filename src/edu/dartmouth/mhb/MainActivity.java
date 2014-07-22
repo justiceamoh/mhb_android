@@ -104,8 +104,9 @@ public class MainActivity extends FragmentActivity {
 
         if (savedInstanceState == null) {
             selectItem(1);
-        }
-
+        }       
+        
+        
 	}
 
 	@Override
@@ -131,6 +132,7 @@ public class MainActivity extends FragmentActivity {
 		super.onPause();
 	}
 
+	
 	// TODO: menu options and next/previous actions
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

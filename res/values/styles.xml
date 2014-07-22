@@ -49,6 +49,13 @@
 
     </style>
 
-
+     <!-- TextView Styles -->
+	 <style name="Baroque" parent="@android:style/TextAppearance.Medium">
+	   <item name="android:layout_width">fill_parent</item>
+	   <item name="android:layout_height">wrap_content</item>
+	   <item name="android:textColor">#F2BAD0</item>
+	   <item name="android:textSize">14pt</item>
+<!-- 	   <item name="fontFamily">baroque_script</item> -->	 
+	</style>
 
 </resources>

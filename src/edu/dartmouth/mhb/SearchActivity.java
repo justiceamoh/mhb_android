@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment;
 
 public class SearchActivity extends Activity {
 	private ListView mListView;

@@ -185,8 +185,9 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     	    	titles.add(hymns.get(i).getTitle());
     	    }   	        
     		   		
-	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-	            android.R.layout.simple_list_item_1, titles);
+    	    
+    	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+    	    		R.layout.contents_list_item_1,titles);
 	        listview.setAdapter(adapter);    		
 	        
 	        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -217,13 +218,13 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     		
     		//Setup layout here.
     		final GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
-    	    ArrayList<String> titles = new ArrayList<String>();
+    	    ArrayList<String> numbers = new ArrayList<String>();
     	    for (int i=0; i<hymns.size();i++){
-    	    	titles.add(String.valueOf(hymns.get(i).getId()));
+    	    	numbers.add(String.valueOf(hymns.get(i).getId()));
     	    }
     	    
 	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-	            android.R.layout.simple_list_item_1, titles);
+	        		R.layout.contents_list_item_1, numbers);
 	        gridview.setAdapter(adapter);    		
     		
 	        
@@ -258,7 +259,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     	    }
     	    
 	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-	            android.R.layout.simple_list_item_1, authors);
+	        		R.layout.contents_list_item_1, authors);
 	        listview.setAdapter(adapter);    		
 
 	        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

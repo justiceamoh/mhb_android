@@ -39,31 +39,14 @@ public final class R {
         public static final int drawer_shadow=0x7f020003;
         public static final int ic_action_back=0x7f020004;
         public static final int ic_action_browse=0x7f020005;
-        public static final int ic_action_delete=0x7f020006;
-        public static final int ic_action_done=0x7f020007;
-        public static final int ic_action_edit=0x7f020008;
-        public static final int ic_action_format=0x7f020009;
-        public static final int ic_action_forward=0x7f02000a;
-        public static final int ic_action_locate=0x7f02000b;
-        public static final int ic_action_mail=0x7f02000c;
-        public static final int ic_action_mail_add=0x7f02000d;
-        public static final int ic_action_microphone=0x7f02000e;
-        public static final int ic_action_overflow=0x7f02000f;
-        public static final int ic_action_paste=0x7f020010;
-        public static final int ic_action_photo=0x7f020011;
-        public static final int ic_action_refresh=0x7f020012;
-        public static final int ic_action_search=0x7f020013;
-        public static final int ic_action_select_all=0x7f020014;
-        public static final int ic_action_send=0x7f020015;
-        public static final int ic_action_share=0x7f020016;
-        public static final int ic_action_star=0x7f020017;
-        public static final int ic_action_user=0x7f020018;
-        public static final int ic_action_user_add=0x7f020019;
-        public static final int ic_action_video=0x7f02001a;
-        public static final int ic_drawer=0x7f02001b;
-        public static final int ic_launcher=0x7f02001c;
-        public static final int paper_texture=0x7f02001d;
-        public static final int splash=0x7f02001e;
+        public static final int ic_action_done=0x7f020006;
+        public static final int ic_action_format=0x7f020007;
+        public static final int ic_action_overflow=0x7f020008;
+        public static final int ic_action_search=0x7f020009;
+        public static final int ic_drawer=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int paper_texture=0x7f02000c;
+        public static final int splash=0x7f02000d;
     }
     public static final class id {
         public static final int action_contents=0x7f0a0015;
@@ -96,20 +79,21 @@ public final class R {
         public static final int activity_main=0x7f030001;
         public static final int activity_search=0x7f030002;
         public static final int activity_splashscreen=0x7f030003;
-        public static final int drawer_list_item=0x7f030004;
-        public static final int fragment_contents_grid=0x7f030005;
-        public static final int fragment_contents_list=0x7f030006;
-        public static final int fragment_hymn_page=0x7f030007;
-        public static final int fragment_menu_about=0x7f030008;
-        public static final int fragment_menu_canticles=0x7f030009;
-        public static final int fragment_menu_creeds=0x7f03000a;
-        public static final int fragment_menu_favorites=0x7f03000b;
-        public static final int fragment_menu_hymns=0x7f03000c;
-        public static final int fragment_menu_today=0x7f03000d;
-        public static final int fragment_tab_authors=0x7f03000e;
-        public static final int fragment_tab_numbers=0x7f03000f;
-        public static final int fragment_tab_titles=0x7f030010;
-        public static final int hymnresult=0x7f030011;
+        public static final int contents_list_item_1=0x7f030004;
+        public static final int drawer_list_item=0x7f030005;
+        public static final int fragment_contents_grid=0x7f030006;
+        public static final int fragment_contents_list=0x7f030007;
+        public static final int fragment_hymn_page=0x7f030008;
+        public static final int fragment_menu_about=0x7f030009;
+        public static final int fragment_menu_canticles=0x7f03000a;
+        public static final int fragment_menu_creeds=0x7f03000b;
+        public static final int fragment_menu_favorites=0x7f03000c;
+        public static final int fragment_menu_hymns=0x7f03000d;
+        public static final int fragment_menu_today=0x7f03000e;
+        public static final int fragment_tab_authors=0x7f03000f;
+        public static final int fragment_tab_numbers=0x7f030010;
+        public static final int fragment_tab_titles=0x7f030011;
+        public static final int hymnresult=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -160,6 +144,11 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
+        /**  TextView Styles 
+ 	   <item name="fontFamily">baroque_script</item>
+ 
+         */
+        public static final int Baroque=0x7f080008;
         public static final int ContentTheme=0x7f080006;
         public static final int CustomTabWidget=0x7f080007;
         public static final int MainTheme=0x7f080003;
