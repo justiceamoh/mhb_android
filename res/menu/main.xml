@@ -16,6 +16,7 @@
     <item
         android:id="@+id/layout_item"
         android:actionViewClass="android.widget.RelativeLayout"
+        android:showAsAction="always"
         android:title="" />
         
 <!--     <item
