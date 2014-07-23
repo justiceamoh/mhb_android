@@ -68,7 +68,9 @@ public class MenuHymnsFragment extends Fragment {
 															// previous
 			}
 		});
-
+		
+		goToPage(MainActivity.currentHymn);
+		
 		return root;
 	}
 
@@ -92,6 +94,7 @@ public class MenuHymnsFragment extends Fragment {
 		// Do something in response to button click
 		getActivity().getActionBar().hide();
 		mPager.setCurrentItem(pageno, true);
+		MainActivity.currentHymn=pageno; //TODO be certain this is right - updating current hymn index
 		
 	}
 

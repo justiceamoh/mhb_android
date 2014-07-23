@@ -7,6 +7,7 @@ import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -38,7 +39,10 @@ public class MainActivity extends FragmentActivity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private String[] mDrawerMenuTitles;
-
+	
+	static final String STATE_HYMN = "previousHymn";
+	public static int currentHymn;
+	
 	final String[] mFragments = {
 			"edu.dartmouth.mhb.MenuFragments.MenuTodayFragment",
 			"edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment",
@@ -54,6 +58,11 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		context = getApplicationContext();
 
+		
+        // Restore Preferences - previous hymn
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        currentHymn = sharedPref.getInt(STATE_HYMN,0);
+		
 		mTitle = mDrawerTitle = getTitle();
 		mDrawerMenuTitles = getResources().getStringArray(
 				R.array.drawer_menu_array);
@@ -104,7 +113,7 @@ public class MainActivity extends FragmentActivity {
 
         if (savedInstanceState == null) {
             selectItem(1);
-        }       
+        }      
         
         
 	}
@@ -117,8 +126,7 @@ public class MainActivity extends FragmentActivity {
 		
 		if (extras!=null){
 			int savedId = extras.getInt("hymn_id");
-	        MenuHymnsFragment f= (MenuHymnsFragment) getSupportFragmentManager().findFragmentById(R.id.content_frame);
-	        f.goToPage(savedId);
+			gotoHymn(savedId);
 		}
 		
 
@@ -132,6 +140,19 @@ public class MainActivity extends FragmentActivity {
 		super.onPause();
 	}
 
+    @Override
+    protected void onStop(){
+       super.onStop();
+
+      // We need an Editor object to make preference changes.
+      // All objects are from android.context.Context
+      SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
+      SharedPreferences.Editor editor = settings.edit();
+      editor.putInt(STATE_HYMN, currentHymn);
+
+      // Commit the edits!
+      editor.commit();
+    }
 	
 	// TODO: menu options and next/previous actions
 	@Override
@@ -192,18 +213,19 @@ public class MainActivity extends FragmentActivity {
 	            int result = res.getInt("result");
 	            
 	            //open hymn fragment to result page
-//	            Bundle args = new Bundle();
-//	            args.putInt("page_no", result);
-	            //TODO implement so it works on all fragments
-	            MenuHymnsFragment f= (MenuHymnsFragment) getSupportFragmentManager().findFragmentById(R.id.content_frame);
-	            f.goToPage(result);
-	            
+	            gotoHymn(result);
 	        }
 	        break;
 	    }
 	}
 
-
+	public void gotoHymn(int hymnId){
+        //TODO implement so it works on all fragments
+		MenuHymnsFragment f= (MenuHymnsFragment) getSupportFragmentManager().findFragmentById(R.id.content_frame);
+        f.goToPage(hymnId);		
+	}
+	
+	
 
 	// ///////////////////////////
 	// //Drawer Layout Methods////
