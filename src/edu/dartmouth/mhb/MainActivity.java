@@ -81,11 +81,6 @@ public class MainActivity extends FragmentActivity {
 
 		
 		ActionBar actionbar = getActionBar();
-        // set actionbar as customview
-//		actionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//		View actionView = View.inflate(context, R.layout.actionbar, null);
-//		actionbar.setCustomView(actionView);		
-		
 		// enable actionbar app icon to behave as action (for toggling nav drawer)
 		actionbar.setDisplayHomeAsUpEnabled(true);
 		actionbar.setHomeButtonEnabled(true);
@@ -173,15 +168,14 @@ public class MainActivity extends FragmentActivity {
 		inflater.inflate(R.menu.main, menu);
 
 		// Inflate bottom bar
-		
-		
-		RelativeLayout relativeLayout = (RelativeLayout) menu.findItem(
-	            R.id.layout_item).getActionView();
-	    
-	    View inflatedView = getLayoutInflater().inflate(
-	            R.layout.bottombar, null);
-
-	    relativeLayout.addView(inflatedView);
+				
+//		RelativeLayout relativeLayout = (RelativeLayout) menu.findItem(
+//	            R.id.layout_item).getActionView();
+//	    
+//	    View inflatedView = getLayoutInflater().inflate(
+//	            R.layout.bottombar, null);
+//
+//	    relativeLayout.addView(inflatedView);
 		
 		
 		// Get the SearchView and set the searchable configuration
@@ -205,6 +199,7 @@ public class MainActivity extends FragmentActivity {
 		// view
 		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
 		menu.findItem(R.id.menu_search).setVisible(!drawerOpen);
+		menu.findItem(R.id.action_contents).setVisible(!drawerOpen);
 		// TODO set all other menus as invisible
 		return super.onPrepareOptionsMenu(menu);
 	}

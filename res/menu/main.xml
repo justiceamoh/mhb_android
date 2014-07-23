@@ -12,13 +12,7 @@
         android:icon="@drawable/ic_action_search"
         android:showAsAction="ifRoom|collapseActionView"
         android:title="@string/action_search" />
-    
-    <item
-        android:id="@+id/layout_item"
-        android:actionViewClass="android.widget.RelativeLayout"
-        android:showAsAction="always"
-        android:title="" />
-        
+
 <!--     <item
         android:id="@+id/action_format"
         android:icon="@drawable/ic_action_format"
