@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment;
 
@@ -78,12 +79,22 @@ public class MainActivity extends FragmentActivity {
 				R.layout.drawer_list_item, mDrawerMenuTitles));
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-		// enable ActionBar app icon to behave as action to toggle nav drawer
+		
 		ActionBar actionbar = getActionBar();
+        // set actionbar as customview
+//		actionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//		View actionView = View.inflate(context, R.layout.actionbar, null);
+//		actionbar.setCustomView(actionView);		
+		
+		// enable actionbar app icon to behave as action (for toggling nav drawer)
 		actionbar.setDisplayHomeAsUpEnabled(true);
 		actionbar.setHomeButtonEnabled(true);
+		
 
-        //TODO toggle hide and show action bar on touch
+		
+		
+		
+		//TODO toggle hide and show action bar on touch
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the sliding drawer and the action bar app icon
@@ -161,6 +172,18 @@ public class MainActivity extends FragmentActivity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 
+		// Inflate bottom bar
+		
+		
+		RelativeLayout relativeLayout = (RelativeLayout) menu.findItem(
+	            R.id.layout_item).getActionView();
+	    
+	    View inflatedView = getLayoutInflater().inflate(
+	            R.layout.bottombar, null);
+
+	    relativeLayout.addView(inflatedView);
+		
+		
 		// Get the SearchView and set the searchable configuration
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 		SearchView searchView = (SearchView) menu.findItem(R.id.menu_search)
