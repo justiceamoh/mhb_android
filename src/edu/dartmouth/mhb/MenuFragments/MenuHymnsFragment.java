@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import edu.dartmouth.mhb.Globals;
 import edu.dartmouth.mhb.Hymn;
@@ -47,25 +47,26 @@ public class MenuHymnsFragment extends Fragment {
 		mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
 		mPager.setAdapter(mPagerAdapter);
 
-		Button goNextButton = (Button) root.findViewById(R.id.button_next);
+		ImageButton goNextButton = (ImageButton) root.findViewById(R.id.button_right_caret);
 		goNextButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
 				getActivity().getActionBar().hide();
-				mPager.setCurrentItem(getItem(+1), true); // getItem(+1) for
-															// next
+				mPager.setCurrentItem(getItem(+1), true); // getItem(+1) for next
+				MainActivity.currentHymn++;
+															
 			}
 		});
 
-		Button goPrevButton = (Button) root.findViewById(R.id.button_prev);
+		ImageButton goPrevButton = (ImageButton) root.findViewById(R.id.button_left_caret);
 		goPrevButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
 				getActivity().getActionBar().hide();
-				mPager.setCurrentItem(getItem(-1), true); // getItem(-1) for
-															// previous
+				mPager.setCurrentItem(getItem(-1), true); // getItem(-1) for previous
+				MainActivity.currentHymn--;											
 			}
 		});
 		
@@ -178,7 +179,7 @@ public class MenuHymnsFragment extends Fragment {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					if (showBar) // Toggle action bar visiblity
+					if (showBar) // Toggle action bar visibility
 						getActivity().getActionBar().hide();
 					else
 						getActivity().getActionBar().show();

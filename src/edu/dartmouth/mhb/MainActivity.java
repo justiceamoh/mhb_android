@@ -83,9 +83,7 @@ public class MainActivity extends FragmentActivity {
 		ActionBar actionbar = getActionBar();
 		// enable actionbar app icon to behave as action (for toggling nav drawer)
 		actionbar.setDisplayHomeAsUpEnabled(true);
-		actionbar.setHomeButtonEnabled(true);
-		
-
+		actionbar.setHomeButtonEnabled(true);		
 		
 		
 		
@@ -166,17 +164,6 @@ public class MainActivity extends FragmentActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
-
-		// Inflate bottom bar
-				
-//		RelativeLayout relativeLayout = (RelativeLayout) menu.findItem(
-//	            R.id.layout_item).getActionView();
-//	    
-//	    View inflatedView = getLayoutInflater().inflate(
-//	            R.layout.bottombar, null);
-//
-//	    relativeLayout.addView(inflatedView);
-		
 		
 		// Get the SearchView and set the searchable configuration
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
