@@ -6,27 +6,51 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/inner_content_hymn"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/button_prev"
-            android:layout_width="20dp"
-            android:layout_height="fill_parent"
-            android:background="?android:attr/selectableItemBackground" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1" />
+    </LinearLayout>
 
-        <Button
-            android:id="@+id/button_next"
-            android:layout_width="20dp"
-            android:layout_height="fill_parent"
-            android:background="?android:attr/selectableItemBackground" />
+    <LinearLayout
+        android:id="@+id/bottombar"
+        android:layout_width="fill_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/action_background_brown"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <ImageButton
+            android:id="@+id/button_left_caret"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_left_caret" />
+
+        <ImageButton
+            android:id="@+id/button_format"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_format" />
+
+        <ImageButton
+            android:id="@+id/button_right_caret"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_right_caret" />
     </LinearLayout>
 
 </RelativeLayout>

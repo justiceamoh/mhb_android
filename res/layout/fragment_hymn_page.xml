@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/page_side_padding"
+    android:paddingRight="@dimen/page_side_padding"
+    android:paddingTop="@dimen/top_offset" >
 
     <TextView
         android:id="@+id/textNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_offset"
         android:text="@string/ui_number_title"
         android:textSize="@dimen/number_size" />
 
@@ -16,6 +18,7 @@
         android:id="@+id/textTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/top_title_margin"
         android:gravity="center_horizontal"
         android:text="@string/ui_title_title"
         android:textSize="@dimen/title_size"

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/gridview"
-    android:layout_width="fill_parent" 
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:columnWidth="60dp"
-    android:numColumns="auto_fit"
     android:layout_marginBottom="25dp"
     android:layout_marginRight="25dp"
+    android:background="@color/grid_border"
     android:gravity="center"
-/>
+    android:numColumns="auto_fit"
+    android:padding="1dp"
+    android:stretchMode="columnWidth" />

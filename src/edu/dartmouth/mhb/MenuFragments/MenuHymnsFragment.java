@@ -98,6 +98,8 @@ public class MenuHymnsFragment extends Fragment {
 		MainActivity.currentHymn=pageno; //TODO be certain this is right - updating current hymn index
 		
 	}
+	
+
 
 	private class SlidePageAdapter extends FragmentStatePagerAdapter {
 		private List<Fragment> fragments;
@@ -145,6 +147,7 @@ public class MenuHymnsFragment extends Fragment {
 			hymn.setLyrics(getArguments().getString(Globals.KEY_LYRICS));
 
 		}
+		
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -178,12 +181,14 @@ public class MenuHymnsFragment extends Fragment {
 			tv.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					if (showBar) // Toggle action bar visibility
+					// Toggle action bar visibility
+					if (showBar) {
 						getActivity().getActionBar().hide();
-					else
+						
+					} else {
 						getActivity().getActionBar().show();
-
+					}
+					
 					showBar = !showBar;
 
 				}

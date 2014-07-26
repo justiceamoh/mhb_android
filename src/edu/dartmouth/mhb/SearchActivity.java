@@ -2,11 +2,13 @@ package edu.dartmouth.mhb;
 
 import java.util.List;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -19,7 +21,13 @@ public class SearchActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTheme(R.style.ContentTheme);
 		setContentView(R.layout.activity_search);
+		
+		ActionBar actionbar = getActionBar();
+		actionbar.setDisplayHomeAsUpEnabled(true);
+		actionbar.setHomeButtonEnabled(true);		
+		
 		returnIntent = new Intent(this,MainActivity.class);
 		returnIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		
@@ -60,14 +68,27 @@ public class SearchActivity extends Activity {
 							int value = (int) hymn.getId()-1;
 				            returnIntent.putExtra("hymn_id", value);
 				            startActivity(returnIntent);
-
 						}
-
 					});
 
 		}
 
 	}
+	
+	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+        // Handle item selection
+        switch (item.getItemId()) 
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 	
 
 }
