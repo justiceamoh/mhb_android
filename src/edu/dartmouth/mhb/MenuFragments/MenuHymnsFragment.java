@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import edu.dartmouth.mhb.Globals;
 import edu.dartmouth.mhb.Hymn;
@@ -25,6 +26,7 @@ public class MenuHymnsFragment extends Fragment {
 	private ArrayList<Hymn> hymns;
 	private ViewPager mPager;
 	private PagerAdapter mPagerAdapter;
+	private static LinearLayout bottombar;
 
 	public static Fragment newInstance(Context context) {
 		MenuHymnsFragment f = new MenuHymnsFragment();
@@ -36,8 +38,6 @@ public class MenuHymnsFragment extends Fragment {
 			Bundle savedInstanceState) {
 		ViewGroup root = (ViewGroup) inflater.inflate(
 				R.layout.fragment_menu_hymns, null);
-
-		getActivity().getActionBar().hide();
 
 		hymns = MainActivity.hymns;
 
@@ -52,9 +52,10 @@ public class MenuHymnsFragment extends Fragment {
 
 			@Override
 			public void onClick(View view) {
-				getActivity().getActionBar().hide();
 				mPager.setCurrentItem(getItem(+1), true); // getItem(+1) for next
 				MainActivity.currentHymn++;
+				String mtitle = "Hymn "+ Long.toString(hymns.get(MainActivity.currentHymn).getId());
+				getActivity().getActionBar().setTitle(mtitle);
 															
 			}
 		});
@@ -64,13 +65,15 @@ public class MenuHymnsFragment extends Fragment {
 
 			@Override
 			public void onClick(View view) {
-				getActivity().getActionBar().hide();
 				mPager.setCurrentItem(getItem(-1), true); // getItem(-1) for previous
-				MainActivity.currentHymn--;											
+				MainActivity.currentHymn--;
+				String mtitle = "Hymn "+ Long.toString(hymns.get(MainActivity.currentHymn).getId());
+				getActivity().getActionBar().setTitle(mtitle);
 			}
 		});
 		
-		goToPage(MainActivity.currentHymn);
+		bottombar = (LinearLayout) root.findViewById(R.id.bottombar);
+		
 		
 		return root;
 	}
@@ -93,7 +96,8 @@ public class MenuHymnsFragment extends Fragment {
 
 	public void goToPage(int pageno) {
 		// Do something in response to button click
-		getActivity().getActionBar().hide();
+		String mtitle = "Hymn "+ Long.toString(hymns.get(pageno).getId());
+		getActivity().getActionBar().setTitle(mtitle);
 		mPager.setCurrentItem(pageno, true);
 		MainActivity.currentHymn=pageno; //TODO be certain this is right - updating current hymn index
 		
@@ -175,7 +179,7 @@ public class MenuHymnsFragment extends Fragment {
 			str_val = hymn.getLyrics();
 			((TextView) rootView.findViewById(R.id.textLyrics))
 					.setText(str_val);
-
+			
 			// TODO move action bar toggling into MainActivity
 			TextView tv = (TextView) rootView.findViewById(R.id.textLyrics);
 			tv.setOnClickListener(new View.OnClickListener() {
@@ -184,9 +188,10 @@ public class MenuHymnsFragment extends Fragment {
 					// Toggle action bar visibility
 					if (showBar) {
 						getActivity().getActionBar().hide();
-						
+						bottombar.setVisibility(View.GONE);
 					} else {
 						getActivity().getActionBar().show();
+						bottombar.setVisibility(View.VISIBLE);
 					}
 					
 					showBar = !showBar;

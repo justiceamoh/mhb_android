@@ -46,7 +46,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     
       final ActionBar actionBar = getActionBar();
       actionBar.setDisplayHomeAsUpEnabled(true);        
-        
+	  actionBar.setTitle("Contents");  
       
     // Specify that tabs should be displayed in the action bar.
       	actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);      	
