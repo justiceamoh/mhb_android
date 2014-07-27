@@ -8,13 +8,12 @@
 	<dimen name="number_size">15sp</dimen>
 	<dimen name="lyrics_size">16sp</dimen>
 	
-	<dimen name="hymn_side_padding">40dp</dimen>
-	<dimen name="top_offset">12dp</dimen>
-	<dimen name="bottom_offset">25dp</dimen>
-	<dimen name="hymn_text_padding">50dp</dimen>
+
+	<dimen name="top_offset">20dp</dimen>
+	<dimen name="top_title_margin">5dp</dimen>
+	<dimen name="hymn_side_padding">40dp</dimen>	
 	<dimen name="title_side_padding">10dp</dimen>
-	
-	
-	
+	<dimen name="page_side_padding">20dp</dimen>
+	<dimen name="bottom_offset">25dp</dimen>	
 	
 </resources>

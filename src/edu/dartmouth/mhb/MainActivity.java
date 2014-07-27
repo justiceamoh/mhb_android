@@ -23,7 +23,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment;
 
@@ -41,7 +40,7 @@ public class MainActivity extends FragmentActivity {
 	private CharSequence mTitle;
 	private String[] mDrawerMenuTitles;
 	
-	static final String STATE_HYMN = "previousHymn";
+	static final String STATE_HYMN = "currentHymn";
 	public static int currentHymn;
 	
 	final String[] mFragments = {
@@ -61,7 +60,7 @@ public class MainActivity extends FragmentActivity {
 
 		
         // Restore Preferences - previous hymn
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("MHBPrefs",Context.MODE_PRIVATE);
         currentHymn = sharedPref.getInt(STATE_HYMN,0);
 		
 		mTitle = mDrawerTitle = getTitle();
@@ -83,9 +82,7 @@ public class MainActivity extends FragmentActivity {
 		ActionBar actionbar = getActionBar();
 		// enable actionbar app icon to behave as action (for toggling nav drawer)
 		actionbar.setDisplayHomeAsUpEnabled(true);
-		actionbar.setHomeButtonEnabled(true);
-		
-
+		actionbar.setHomeButtonEnabled(true);		
 		
 		
 		
@@ -166,17 +163,6 @@ public class MainActivity extends FragmentActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
-
-		// Inflate bottom bar
-				
-//		RelativeLayout relativeLayout = (RelativeLayout) menu.findItem(
-//	            R.id.layout_item).getActionView();
-//	    
-//	    View inflatedView = getLayoutInflater().inflate(
-//	            R.layout.bottombar, null);
-//
-//	    relativeLayout.addView(inflatedView);
-		
 		
 		// Get the SearchView and set the searchable configuration
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);

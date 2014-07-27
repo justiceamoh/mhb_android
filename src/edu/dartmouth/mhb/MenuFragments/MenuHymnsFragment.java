@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import edu.dartmouth.mhb.Globals;
 import edu.dartmouth.mhb.Hymn;
@@ -25,6 +27,7 @@ public class MenuHymnsFragment extends Fragment {
 	private ArrayList<Hymn> hymns;
 	private ViewPager mPager;
 	private PagerAdapter mPagerAdapter;
+	private static LinearLayout bottombar;
 
 	public static Fragment newInstance(Context context) {
 		MenuHymnsFragment f = new MenuHymnsFragment();
@@ -37,8 +40,6 @@ public class MenuHymnsFragment extends Fragment {
 		ViewGroup root = (ViewGroup) inflater.inflate(
 				R.layout.fragment_menu_hymns, null);
 
-		getActivity().getActionBar().hide();
-
 		hymns = MainActivity.hymns;
 
 		List<Fragment> fragments = getFragments();
@@ -47,29 +48,33 @@ public class MenuHymnsFragment extends Fragment {
 		mPagerAdapter = new SlidePageAdapter(getFragmentManager(), fragments);
 		mPager.setAdapter(mPagerAdapter);
 
-		Button goNextButton = (Button) root.findViewById(R.id.button_next);
+		ImageButton goNextButton = (ImageButton) root.findViewById(R.id.button_right_caret);
 		goNextButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
-				getActivity().getActionBar().hide();
-				mPager.setCurrentItem(getItem(+1), true); // getItem(+1) for
-															// next
+				mPager.setCurrentItem(getItem(+1), true); // getItem(+1) for next
+				MainActivity.currentHymn++;
+				String mtitle = "Hymn "+ Long.toString(hymns.get(MainActivity.currentHymn).getId());
+				getActivity().getActionBar().setTitle(mtitle);
+															
 			}
 		});
 
-		Button goPrevButton = (Button) root.findViewById(R.id.button_prev);
+		ImageButton goPrevButton = (ImageButton) root.findViewById(R.id.button_left_caret);
 		goPrevButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
-				getActivity().getActionBar().hide();
-				mPager.setCurrentItem(getItem(-1), true); // getItem(-1) for
-															// previous
+				mPager.setCurrentItem(getItem(-1), true); // getItem(-1) for previous
+				MainActivity.currentHymn--;
+				String mtitle = "Hymn "+ Long.toString(hymns.get(MainActivity.currentHymn).getId());
+				getActivity().getActionBar().setTitle(mtitle);
 			}
 		});
 		
-		goToPage(MainActivity.currentHymn);
+		bottombar = (LinearLayout) root.findViewById(R.id.bottombar);
+		
 		
 		return root;
 	}
@@ -92,11 +97,14 @@ public class MenuHymnsFragment extends Fragment {
 
 	public void goToPage(int pageno) {
 		// Do something in response to button click
-		getActivity().getActionBar().hide();
+		String mtitle = "Hymn "+ Long.toString(hymns.get(pageno).getId());
+		getActivity().getActionBar().setTitle(mtitle);
 		mPager.setCurrentItem(pageno, true);
 		MainActivity.currentHymn=pageno; //TODO be certain this is right - updating current hymn index
 		
 	}
+	
+
 
 	private class SlidePageAdapter extends FragmentStatePagerAdapter {
 		private List<Fragment> fragments;
@@ -120,7 +128,7 @@ public class MenuHymnsFragment extends Fragment {
 	public static class SlidePageFragment extends Fragment {
 
 		private Hymn hymn;
-		private Boolean showBar = false;
+		private Boolean showBar = true;
 
 		// Construct a new page for a given hymn
 		public static SlidePageFragment newInstance(Hymn hymn) {
@@ -144,6 +152,7 @@ public class MenuHymnsFragment extends Fragment {
 			hymn.setLyrics(getArguments().getString(Globals.KEY_LYRICS));
 
 		}
+		
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -171,18 +180,21 @@ public class MenuHymnsFragment extends Fragment {
 			str_val = hymn.getLyrics();
 			((TextView) rootView.findViewById(R.id.textLyrics))
 					.setText(str_val);
-
+			
 			// TODO move action bar toggling into MainActivity
 			TextView tv = (TextView) rootView.findViewById(R.id.textLyrics);
 			tv.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					if (showBar) // Toggle action bar visiblity
+					// Toggle action bar visibility
+					if (showBar) {
 						getActivity().getActionBar().hide();
-					else
+						bottombar.setVisibility(View.GONE);
+					} else {
 						getActivity().getActionBar().show();
-
+						bottombar.setVisibility(View.VISIBLE);
+					}
+					
 					showBar = !showBar;
 
 				}

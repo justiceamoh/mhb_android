@@ -24,7 +24,7 @@
 
     <style name="MainTheme" parent="@android:Theme.Holo.Light.DarkActionBar">
         <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
+         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:windowBackground">@drawable/bg</item>
     </style>
 
@@ -38,7 +38,7 @@
     </style>
 
     <style name="ContentTheme" parent="@android:Theme.Holo.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
+         <item name="android:actionBarStyle">@style/MyActionBar</item> 
         <item name="android:tabWidgetStyle">@style/CustomTabWidget</item>
         <item name="android:windowBackground">@drawable/bg</item>
     </style>
@@ -49,13 +49,6 @@
 
     </style>
 
-     <!-- TextView Styles -->
-	 <style name="Baroque" parent="@android:style/TextAppearance.Medium">
-	   <item name="android:layout_width">fill_parent</item>
-	   <item name="android:layout_height">wrap_content</item>
-	   <item name="android:textColor">#F2BAD0</item>
-	   <item name="android:textSize">14pt</item>
-<!-- 	   <item name="fontFamily">baroque_script</item> -->	 
-	</style>
+
 
 </resources>

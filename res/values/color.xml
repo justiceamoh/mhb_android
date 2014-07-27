@@ -1,0 +1,7 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <color name="grid_border">#493337</color>
+    <color name="action_background_brown">#e0493337</color>
+	
+</resources>
