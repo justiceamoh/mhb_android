@@ -41,7 +41,7 @@ public class MainActivity extends FragmentActivity {
 	private CharSequence mTitle;
 	private String[] mDrawerMenuTitles;
 	
-	static final String STATE_HYMN = "previousHymn";
+	static final String STATE_HYMN = "currentHymn";
 	public static int currentHymn;
 	
 	final String[] mFragments = {
@@ -61,7 +61,7 @@ public class MainActivity extends FragmentActivity {
 
 		
         // Restore Preferences - previous hymn
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("MHBPrefs",Context.MODE_PRIVATE);
         currentHymn = sharedPref.getInt(STATE_HYMN,0);
 		
 		mTitle = mDrawerTitle = getTitle();
