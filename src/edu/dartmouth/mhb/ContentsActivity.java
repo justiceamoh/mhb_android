@@ -224,7 +224,7 @@ public class ContentsActivity extends FragmentActivity implements ActionBar.TabL
     	    }
     	    
 	        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-	        		R.layout.contents_list_item_1, numbers);
+	        		R.layout.contents_grid_item_1, numbers);
 	        gridview.setAdapter(adapter);    		
     		
 	        

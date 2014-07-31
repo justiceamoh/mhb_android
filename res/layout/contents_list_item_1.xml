@@ -4,5 +4,5 @@
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceSmall"
     android:gravity="center_vertical"
-    android:paddingLeft="25dp"
+    android:paddingLeft="@dimen/page_side_padding"
     android:minHeight="?android:attr/listPreferredItemHeightSmall" />

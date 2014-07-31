@@ -14,7 +14,8 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int action_background_brown=0x7f050001;
+        public static final int action_background_brown=0x7f050002;
+        public static final int grid_background=0x7f050001;
         /**  Default screen margins, per the Android Design guidelines. 
          */
         public static final int grid_border=0x7f050000;
@@ -26,6 +27,7 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
         public static final int author_size=0x7f060003;
         public static final int bottom_offset=0x7f06000b;
+        public static final int grid_border_size=0x7f06000c;
         public static final int hymn_side_padding=0x7f060008;
         public static final int lyrics_size=0x7f060005;
         public static final int number_size=0x7f060004;
@@ -88,21 +90,22 @@ public final class R {
         public static final int activity_main=0x7f030001;
         public static final int activity_search=0x7f030002;
         public static final int activity_splashscreen=0x7f030003;
-        public static final int contents_list_item_1=0x7f030004;
-        public static final int drawer_list_item=0x7f030005;
-        public static final int fragment_contents_grid=0x7f030006;
-        public static final int fragment_contents_list=0x7f030007;
-        public static final int fragment_hymn_page=0x7f030008;
-        public static final int fragment_menu_about=0x7f030009;
-        public static final int fragment_menu_canticles=0x7f03000a;
-        public static final int fragment_menu_creeds=0x7f03000b;
-        public static final int fragment_menu_favorites=0x7f03000c;
-        public static final int fragment_menu_hymns=0x7f03000d;
-        public static final int fragment_menu_today=0x7f03000e;
-        public static final int fragment_tab_authors=0x7f03000f;
-        public static final int fragment_tab_numbers=0x7f030010;
-        public static final int fragment_tab_titles=0x7f030011;
-        public static final int hymnresult=0x7f030012;
+        public static final int contents_grid_item_1=0x7f030004;
+        public static final int contents_list_item_1=0x7f030005;
+        public static final int drawer_list_item=0x7f030006;
+        public static final int fragment_contents_grid=0x7f030007;
+        public static final int fragment_contents_list=0x7f030008;
+        public static final int fragment_hymn_page=0x7f030009;
+        public static final int fragment_menu_about=0x7f03000a;
+        public static final int fragment_menu_canticles=0x7f03000b;
+        public static final int fragment_menu_creeds=0x7f03000c;
+        public static final int fragment_menu_favorites=0x7f03000d;
+        public static final int fragment_menu_hymns=0x7f03000e;
+        public static final int fragment_menu_today=0x7f03000f;
+        public static final int fragment_tab_authors=0x7f030010;
+        public static final int fragment_tab_numbers=0x7f030011;
+        public static final int fragment_tab_titles=0x7f030012;
+        public static final int hymnresult=0x7f030013;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
