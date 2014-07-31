@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import edu.dartmouth.mhb.FormatDialog;
 import edu.dartmouth.mhb.Globals;
 import edu.dartmouth.mhb.Hymn;
 import edu.dartmouth.mhb.MainActivity;
@@ -73,7 +74,22 @@ public class MenuHymnsFragment extends Fragment {
 			}
 		});
 		
+		
+		ImageButton formatButton = (ImageButton) root.findViewById(R.id.button_format);
+		formatButton.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View view){
+				Intent intent = new Intent(getActivity(), FormatDialog.class);
+				startActivity(intent);
+			}
+			
+		});
+		
+		
+		
+		
 		bottombar = (LinearLayout) root.findViewById(R.id.bottombar);
+		
 		
 		
 		return root;
