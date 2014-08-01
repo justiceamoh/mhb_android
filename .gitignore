@@ -3,5 +3,5 @@
 .project
 .settings/
 .DS_Store
-*bin/
-*gen/
+*bin/*
+*gen/*
