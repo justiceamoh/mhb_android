@@ -62,7 +62,7 @@ public class SearchActivity extends Activity {
 								final View view, int position, long id) {
 							Hymn hymn = (Hymn) parent
 									.getItemAtPosition(position);
-
+							
 							// TODO Use hymn to create slide fragment
 							Log.d(Globals.TAG, hymn.getTitle());
 							int value = (int) hymn.getId()-1;

@@ -11,6 +11,7 @@
     <string name="action_search">Search</string>
     <string name="action_contents">Contents</string>
     <string name="action_format">Format</string>
+    <string name="action_goto">GoTo</string>
     <string name="action_day_night">Day/Night</string>
     <string name="content_tab_title">Titles</string>
     <string name="content_tab_number">MHB No.</string>

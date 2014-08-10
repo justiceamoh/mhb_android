@@ -26,7 +26,7 @@ public class MenuAboutFragment extends Fragment {
         
     	//Set test string
     	String str_val = "About";
-    	((TextView) root.findViewById(R.id.textView1)).setText(str_val);
+    	((TextView) root.findViewById(R.id.textGotoTitle)).setText(str_val);
         
         
         return root;

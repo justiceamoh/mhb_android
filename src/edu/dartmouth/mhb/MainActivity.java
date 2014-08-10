@@ -199,11 +199,17 @@ public class MainActivity extends FragmentActivity {
 		}
 		// TODO Switch Statement to handle menu item selection
 
+		Intent intent;
 		switch(item.getItemId()){
 			case R.id.action_contents:
-				Intent intent = new Intent(this,ContentsActivity.class);				
+				intent = new Intent(this,ContentsActivity.class);				
 				startActivityForResult(intent,1);
-				break;				 
+				break;
+			
+			case R.id.menu_goto:
+				intent = new Intent(this, GoToNumberActivity.class);
+				startActivity(intent);
+				break;
 		}
 		
 		return super.onOptionsItemSelected(item);

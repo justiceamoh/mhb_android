@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="@dimen/bottom_offset"
+    android:layout_marginLeft="@dimen/page_side_padding"
+    android:layout_marginRight="@dimen/page_side_padding"
+    android:background="@color/leather_brown"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/bottom_offset" >
+
+    <TextView
+        android:id="@+id/textGotoNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="232"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/Gold"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/textGotoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Enter a hymn number"/>
+
+    <GridView
+        android:id="@+id/gridViewDialer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:numColumns="3"
+        android:stretchMode="columnWidth" >
+
+    </GridView>
+
+</LinearLayout>

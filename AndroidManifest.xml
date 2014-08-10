@@ -45,6 +45,7 @@
             android:theme="@android:style/Theme.Holo.Light.Dialog">
             	  
         </activity>
+        <activity android:name="GoToNumberActivity"></activity>
         
     </application>
 

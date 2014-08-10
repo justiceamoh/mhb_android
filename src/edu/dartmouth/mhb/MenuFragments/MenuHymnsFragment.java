@@ -180,7 +180,7 @@ public class MenuHymnsFragment extends Fragment {
 
 			// Set MHB no. from db
 			str_val = "MHB " + String.valueOf(hymn.getId());
-			((TextView) rootView.findViewById(R.id.textNumber))
+			((TextView) rootView.findViewById(R.id.textGotoNumber))
 					.setText(str_val);
 
 			// Set Title from db

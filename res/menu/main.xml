@@ -1,19 +1,24 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <item
+        android:id="@+id/menu_goto"
+        android:icon="@drawable/ic_action_browse"
+        android:showAsAction="always"
+        android:title="@string/action_goto"/>
     <item
         android:id="@+id/action_contents"
         android:icon="@drawable/ic_action_contents"
         android:showAsAction="always"
-        android:title="@string/action_contents" />
-    
+        android:title="@string/action_contents"/>
     <item
         android:id="@+id/menu_search"
         android:actionViewClass="android.widget.SearchView"
         android:icon="@drawable/ic_action_search"
         android:showAsAction="ifRoom|collapseActionView"
-        android:title="@string/action_search" />
+        android:title="@string/action_search"/>
 
-<!--     <item
+    <!--
+         <item
         android:id="@+id/action_format"
         android:icon="@drawable/ic_action_format"
         android:showAsAction="ifRoom"
@@ -23,6 +28,7 @@
         android:id="@+id/action_day_night"
         android:icon="@drawable/ic_action_back"
         android:showAsAction="ifRoom"
-        android:title="@string/action_day_night" /> -->
+        android:title="@string/action_day_night" />
+    -->
 
 </menu>

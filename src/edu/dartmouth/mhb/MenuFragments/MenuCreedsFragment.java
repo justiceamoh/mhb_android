@@ -24,7 +24,7 @@ public class MenuCreedsFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_menu_creeds, null);
     	//Set test string
     	String str_val = "Creeds";
-    	((TextView) root.findViewById(R.id.textView1)).setText(str_val);
+    	((TextView) root.findViewById(R.id.textGotoTitle)).setText(str_val);
         return root;
     }
  
