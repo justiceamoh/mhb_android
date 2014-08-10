@@ -34,7 +34,7 @@
     </style>
 
     <style name="MyActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">@color/White</item>
     </style>
 
     <style name="ContentTheme" parent="@android:Theme.Holo.Light.DarkActionBar">

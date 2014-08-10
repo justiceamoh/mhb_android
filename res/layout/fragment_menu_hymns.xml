@@ -24,7 +24,7 @@
         android:layout_height="?android:attr/actionBarSize"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/action_background_brown"
+        android:background="@color/leather_brown_transparent"
         android:orientation="horizontal"
         android:weightSum="3" >
 

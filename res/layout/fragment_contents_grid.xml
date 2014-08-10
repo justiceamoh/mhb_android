@@ -14,7 +14,7 @@
         android:columnWidth="50dp"
         android:gravity="center"
         android:horizontalSpacing="@dimen/grid_border_size"
-        android:background="@color/grid_border"
+        android:background="@color/leather_brown"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
         android:verticalSpacing="@dimen/grid_border_size" />

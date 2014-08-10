@@ -17,6 +17,7 @@
 	<dimen name="bottom_offset">25dp</dimen>
 	
 	<dimen name="grid_border_size">0.5dp</dimen>
-	<dimen name="dialog_width">260dp</dimen>	
+	<dimen name="dialog_width">260dp</dimen>
+	<dimen name="drawer_width">200dp</dimen>	
 	
 </resources>
