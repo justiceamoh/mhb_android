@@ -23,7 +23,7 @@ public class GoToNumberActivity extends Activity {
 	TextView gotoNumber;
 
 	static final String[] numbers = new String[] { "1", "2", "3", "4", "5",
-			"6", "7", "8", "9", "< Del", "0", "Go >" };
+			"6", "7", "8", "9", "<Del", "0", "Go>" };
 
 	/** Called when the activity is first created. */
 	@Override
@@ -48,7 +48,6 @@ public class GoToNumberActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, final View view,
 					int position, long id) {
-
 				switch (position) {
 					case 9:  //Backspace selected, delete character
 						String str = gotoNumber.getText().toString().trim();
@@ -61,13 +60,20 @@ public class GoToNumberActivity extends Activity {
 					case 11:
 						break;
 					default:
-						gotoNumber.append(((TextView) view).getText());
+
+						if(gotoNumber.getText().toString().length()<3){
+							gotoNumber.append(((TextView) view).getText());							
+						}
 				}
 
 			}
 
 		});
 
+	}
+	
+	public void updateUI(){
+		
 	}
 
 	@Override
