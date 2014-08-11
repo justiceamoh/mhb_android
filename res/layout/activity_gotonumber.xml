@@ -4,7 +4,6 @@
     android:layout_marginBottom="@dimen/bottom_offset"
     android:layout_marginLeft="@dimen/page_side_padding"
     android:layout_marginRight="@dimen/page_side_padding"
-    android:background="@color/leather_brown"
     android:orientation="vertical"
     android:paddingBottom="@dimen/bottom_offset" >
 
@@ -13,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="150dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/Gold"
         android:textSize="55sp" />
@@ -23,7 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Enter a hymn number"/>
+        android:hint="Enter a hymn number"
+        android:textColor="@color/White" />
 
     <GridView
         android:id="@+id/gridViewDialer"
@@ -33,8 +33,10 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
+        android:horizontalSpacing="10dp"
         android:numColumns="3"
-        android:stretchMode="columnWidth" >
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" >
 
     </GridView>
 

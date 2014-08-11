@@ -90,10 +90,13 @@ public class MenuHymnsFragment extends Fragment {
 
 	private void updateUI() {
 		mPager.setCurrentItem(HymnArraySingleton.getInstance()
-				.getCurrentHymnId()-1, true);
-		String mtitle = "Hymn "
-				+ Long.toString(HymnArraySingleton.getInstance()
-						.getCurrentHymnId());
+				.getCurrentHymnId() - 1, true);
+		setActionBarHymnTitle(HymnArraySingleton.getInstance()
+				.getCurrentHymnId());
+	}
+
+	private void setActionBarHymnTitle(long val) {
+		String mtitle = "Hymn " + Long.toString(val);
 		getActivity().getActionBar().setTitle(mtitle);
 	}
 
@@ -106,7 +109,6 @@ public class MenuHymnsFragment extends Fragment {
 		}
 		return fList;
 	}
-
 
 	public void goToPage(int pageno) {
 		HymnArraySingleton.getInstance().setCurrentHymnId(pageno);
@@ -130,6 +132,7 @@ public class MenuHymnsFragment extends Fragment {
 		public int getCount() {
 			return this.fragments.size();
 		}
+
 	}
 
 	public static class SlidePageFragment extends Fragment {

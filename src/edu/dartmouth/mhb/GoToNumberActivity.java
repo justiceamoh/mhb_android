@@ -3,6 +3,8 @@
  */
 package edu.dartmouth.mhb;
 
+import java.util.ArrayList;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
@@ -22,6 +24,7 @@ public class GoToNumberActivity extends Activity {
 	GridView gridView;
 	TextView gotoTitle;
 	TextView gotoNumber;
+	ArrayList<Hymn> hymns;
 
 	private static Intent returnIntent;
 
@@ -32,7 +35,7 @@ public class GoToNumberActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTheme(R.style.ContentTheme);
+		setTheme(R.style.GoToTheme);
 		setContentView(R.layout.activity_gotonumber);
 
 		ActionBar actionbar = getActionBar();
@@ -41,6 +44,10 @@ public class GoToNumberActivity extends Activity {
 
 		returnIntent = new Intent(this, MainActivity.class);
 		returnIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		
+		actionbar.setTitle(Globals.GOTONUMBER_TITLE);
+		
+		hymns = HymnArraySingleton.getInstance().getHymns();
 
 		gotoTitle = (TextView) findViewById(R.id.textGotoTitle);
 		gotoNumber = (TextView) findViewById(R.id.textGotoNumber);
@@ -68,26 +75,38 @@ public class GoToNumberActivity extends Activity {
 					setReturnIntent(index);
 					break;
 				default:
-					if (!(gotoNumber.getText().toString().isEmpty()
-							&& position == 10)) { //Prevent first character from being zero
+					//prevent first character from being zero
+					if (!(gotoNumber.getText().toString().isEmpty() && position == 10)) { 																							// zero
 						if (gotoNumber.getText().toString().length() < 3) {
 							gotoNumber.append(((TextView) view).getText());
 						}
 					}
 				}
-
+				updateUI();
 			}
 
 		});
 
 	}
 
-	public void updateUI() {
-		int number = Integer.valueOf(gotoNumber.getText().toString());
+	private void updateUI() {
+		if (!gotoNumber.getText().toString().isEmpty()) {
+			int number = Integer.valueOf(gotoNumber.getText().toString());
+
+			if (number > 0 && number <= hymns.size()) {
+				String title = hymns.get(number-1).getTitle();
+				gotoTitle.setText(title);
+			} else {
+				gotoTitle.setText(null);
+				// TODO make open not valid
+			}
+		} else {
+			gotoTitle.setText(null);
+		}
 
 	}
 
-	public void setReturnIntent(int hymn_number) {
+	private void setReturnIntent(int hymn_number) {
 		returnIntent.putExtra(Globals.HYMN_ID_EXTRA, hymn_number);
 		startActivity(returnIntent);
 		finish();

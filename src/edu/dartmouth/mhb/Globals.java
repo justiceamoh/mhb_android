@@ -25,4 +25,6 @@ public abstract class Globals {
 	
 	
 	public static final String HYMN_ID_EXTRA= "hymn_id";
+	
+	public static final String GOTONUMBER_TITLE="Go To Hymn";
 }

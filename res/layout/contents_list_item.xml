@@ -7,18 +7,20 @@
 
     <TextView
         android:id="@+id/cItemNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
         android:text="511"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:gravity ="center_vertical"
-        android:textColor="@color/Gold" />
+        android:textColor="@color/DarkGoldenrod" />
 
     <TextView
         android:id="@+id/cItemText"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:text="Sample Hymn Title Here"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/leather_brown" />
 
 </LinearLayout>

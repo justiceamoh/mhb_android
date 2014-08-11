@@ -28,7 +28,7 @@
             android:layout_height="match_parent"
             android:paddingTop="?android:attr/actionBarSize"
             android:layout_gravity="start"
-            android:background="@color/leather_brown_transparent"
+            android:background="@drawable/flap"
             android:choiceMode="singleChoice"
             android:divider="@layout/list_divider"
             android:dividerHeight="2sp"
