@@ -45,8 +45,7 @@ public class SortedHymnArrayAdapter extends ArrayAdapter<Hymn> implements Sectio
 							.getLyrics());
 					break;
 			}	
-			ch = ch.substring(0,1);
-			ch = ch.toUpperCase();
+			ch = ch.substring(0,1).toUpperCase();
 			alphaIndexer.put(ch,x);
 		}
 
