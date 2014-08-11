@@ -147,5 +147,11 @@ public class Hymn implements Parcelable {
 		}
 	};	
 	
-	
+	public static Comparator<Hymn> HymnFirstLineComparator = new Comparator<Hymn>() {
+		@Override
+		public int compare(Hymn a, Hymn b) {
+			return Utilities.getFirstLine(a.getLyrics()).compareTo(
+					Utilities.getFirstLine(b.getLyrics()));
+		}
+	};	
 }

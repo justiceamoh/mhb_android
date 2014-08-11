@@ -1,8 +1,5 @@
 package edu.dartmouth.mhb;
 
-
-import java.util.ArrayList;
-
 import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.Context;
@@ -27,11 +24,7 @@ import android.widget.SearchView;
 import edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment;
 
 public class MainActivity extends FragmentActivity {
-	Context context;
-	MySQLiteHelper myDBHelper;
-	private HymnsDataSource datasource;
-	public static ArrayList<Hymn> hymns;
-
+	private static Context mContext;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -39,10 +32,8 @@ public class MainActivity extends FragmentActivity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private String[] mDrawerMenuTitles;
-	
-	static final String STATE_HYMN = "currentHymn";
-	public static int currentHymn;
-	
+
+
 	final String[] mFragments = {
 			"edu.dartmouth.mhb.MenuFragments.MenuTodayFragment",
 			"edu.dartmouth.mhb.MenuFragments.MenuHymnsFragment",
@@ -56,12 +47,9 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setTheme(R.style.MainTheme);
 		setContentView(R.layout.activity_main);
-		context = getApplicationContext();
+		mContext = getApplicationContext();
 
-		
-        // Restore Preferences - previous hymn
-        SharedPreferences sharedPref = getSharedPreferences("MHBPrefs",Context.MODE_PRIVATE);
-        currentHymn = sharedPref.getInt(STATE_HYMN,0);
+		HymnArraySingleton.getInstance().setCurrentHymnId(1);
 		
 		mTitle = mDrawerTitle = getTitle();
 		mDrawerMenuTitles = getResources().getStringArray(
@@ -78,15 +66,13 @@ public class MainActivity extends FragmentActivity {
 				R.layout.drawer_list_item, mDrawerMenuTitles));
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-		
 		ActionBar actionbar = getActionBar();
-		// enable actionbar app icon to behave as action (for toggling nav drawer)
+		// enable actionbar app icon to behave as action (for toggling nav
+		// drawer)
 		actionbar.setDisplayHomeAsUpEnabled(true);
-		actionbar.setHomeButtonEnabled(true);		
-		
-		
-		
-		//TODO toggle hide and show action bar on touch
+		actionbar.setHomeButtonEnabled(true);
+
+		// TODO toggle hide and show action bar on touch
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the sliding drawer and the action bar app icon
@@ -110,60 +96,48 @@ public class MainActivity extends FragmentActivity {
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-		datasource = new HymnsDataSource(this);
-		datasource.open();
-		hymns = datasource.getAllHymns();
 
-        if (savedInstanceState == null) {
-            selectItem(1);
-        }      
-        
-        
+		if (savedInstanceState == null) {
+			selectItem(1);
+		}
+
+	}
+
+	public static Context getContext() {
+		return mContext;
 	}
 
 	@Override
 	protected void onResume() {
-		datasource.open();		
-		
+
 		Bundle extras = getIntent().getExtras();
-		
-		if (extras!=null){
-			int savedId = extras.getInt("hymn_id");
+
+		if (extras != null) {
+			int savedId = extras.getInt(Globals.HYMN_ID_EXTRA);
 			gotoHymn(savedId);
 		}
 		
-
-        
 		super.onResume();
 	}
 
 	@Override
 	protected void onPause() {
-		datasource.close();
 		super.onPause();
 	}
 
-    @Override
-    protected void onStop(){
-       super.onStop();
+	@Override
+	protected void onStop() {
+		super.onStop();
 
-      // We need an Editor object to make preference changes.
-      // All objects are from android.context.Context
-      SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
-      SharedPreferences.Editor editor = settings.edit();
-      editor.putInt(STATE_HYMN, currentHymn);
+	}
 
-      // Commit the edits!
-      editor.commit();
-    }
-	
 	// TODO: menu options and next/previous actions
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
-		
+
 		// Get the SearchView and set the searchable configuration
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 		SearchView searchView = (SearchView) menu.findItem(R.id.menu_search)
@@ -200,42 +174,29 @@ public class MainActivity extends FragmentActivity {
 		// TODO Switch Statement to handle menu item selection
 
 		Intent intent;
-		switch(item.getItemId()){
-			case R.id.action_contents:
-				intent = new Intent(this,ContentsActivity.class);				
-				startActivityForResult(intent,1);
-				break;
-			
-			case R.id.menu_goto:
-				intent = new Intent(this, GoToNumberActivity.class);
-				startActivity(intent);
-				break;
+		switch (item.getItemId()) {
+		case R.id.action_contents:
+			intent = new Intent(this, ContentsActivity.class);
+			startActivity(intent);
+			break;
+
+		case R.id.menu_goto:
+			intent = new Intent(this, GoToNumberActivity.class);
+			startActivity(intent);
+			break;
 		}
-		
+
 		return super.onOptionsItemSelected(item);
 	}
-	
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    switch(requestCode) {
-	    case 1:
-	        if (resultCode == RESULT_OK) {
-	            Bundle res = data.getExtras();
-	            int result = res.getInt("result");
-	            
-	            //open hymn fragment to result page
-	            gotoHymn(result);
-	        }
-	        break;
-	    }
+
+
+	public void gotoHymn(int hymnId) {
+		// TODO implement so it works on all fragments
+		MenuHymnsFragment f = (MenuHymnsFragment) getSupportFragmentManager()
+				.findFragmentById(R.id.content_frame);
+		f.goToPage(hymnId);
 	}
 
-	public void gotoHymn(int hymnId){
-        //TODO implement so it works on all fragments
-		MenuHymnsFragment f= (MenuHymnsFragment) getSupportFragmentManager().findFragmentById(R.id.content_frame);
-        f.goToPage(hymnId);		
-	}
-	
-	
 
 	// ///////////////////////////
 	// //Drawer Layout Methods////
@@ -252,16 +213,18 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	private void selectItem(int pos) {
-        Fragment fragment = Fragment.instantiate(MainActivity.this, mFragments[pos]);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+		Fragment fragment = Fragment.instantiate(MainActivity.this,
+				mFragments[pos]);
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		fragmentManager.beginTransaction()
+				.replace(R.id.content_frame, fragment).commit();
 
-        // update selected item and title, then close the drawer
-        mDrawerList.setItemChecked(pos, true);
-        setTitle(mDrawerMenuTitles[pos]);
-        mDrawerLayout.closeDrawer(mDrawerList);
-    }	
-	
+		// update selected item and title, then close the drawer
+		mDrawerList.setItemChecked(pos, true);
+		setTitle(mDrawerMenuTitles[pos]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+	}
+
 	@Override
 	public void setTitle(CharSequence title) {
 		mTitle = title;
@@ -287,8 +250,4 @@ public class MainActivity extends FragmentActivity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
-	
-	
-	
-	
 }

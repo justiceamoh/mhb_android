@@ -17,4 +17,12 @@ public abstract class Globals {
 	public static final String KEY_URL = "url";
 	public static final String KEY_LYRICS = "lyrics";
 	
+	
+	// Sorted Array Codes for Adapter
+	public static final int SORT_TITLE = 1;
+	public static final int SORT_AUTHOR = 2;
+	public static final int SORT_FIRSTLINE = 3;
+	
+	
+	public static final String HYMN_ID_EXTRA= "hymn_id";
 }

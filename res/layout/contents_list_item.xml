@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeightSmall"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/page_side_padding" >
+
+    <TextView
+        android:id="@+id/cItemNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="511"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:gravity ="center_vertical"
+        android:textColor="@color/Gold" />
+
+    <TextView
+        android:id="@+id/cItemText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Sample Hymn Title Here"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</LinearLayout>

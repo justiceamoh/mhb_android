@@ -64,9 +64,8 @@ public class SearchActivity extends Activity {
 									.getItemAtPosition(position);
 							
 							// TODO Use hymn to create slide fragment
-							Log.d(Globals.TAG, hymn.getTitle());
-							int value = (int) hymn.getId()-1;
-				            returnIntent.putExtra("hymn_id", value);
+							int value = (int) hymn.getId();
+				            returnIntent.putExtra(Globals.HYMN_ID_EXTRA, value);
 				            startActivity(returnIntent);
 						}
 					});
